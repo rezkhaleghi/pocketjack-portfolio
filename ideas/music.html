@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Reza (PocketJack)</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #0070f3;
+            --border: #333333;
+            --card-bg: #1a1a1a;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .page-header {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ffffff, #0070f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+        
+        .music-section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .album-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        
+        .album-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent);
+        }
+        
+        .album-cover {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+        
+        .album-content {
+            padding: 1.5rem;
+        }
+        
+        .album-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .album-year {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .album-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .album-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .album-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .track-list {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            margin-bottom: 4rem;
+        }
+        
+        .track {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .track:last-child {
+            border-bottom: none;
+        }
+        
+        .track-number {
+            width: 2.5rem;
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .track-info {
+            flex: 1;
+        }
+        
+        .track-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .track-duration {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .track-play {
+            margin-left: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .track-play:hover {
+            color: var(--accent);
+        }
+        
+        .music-platforms {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .platform-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .platform-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .platform-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .platform-link:hover .platform-icon {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">PocketJack</a>
+                <div class="nav-links">
+                    <a href="index.html#about">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="music.html">Music</a>
+                    <a href="experience.html">Experience</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">My Music</h1>
+                <p class="page-description">
+                    Explore my musical journey and creations. From electronic beats to ambient soundscapes,
+                    my music reflects my passion for sound design and composition.
+                </p>
+            </div>
+        </section>
+
+        <section class="music-section">
+            <div class="container">
+                <h2 class="section-title">Albums & EPs</h2>
+                <div class="album-grid">
+                    <article class="album-card">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Album One" class="album-cover">
+                        <div class="album-content">
+                            <h3 class="album-title">Album Title One</h3>
+                            <div class="album-year">2023</div>
+                            <p class="album-description">
+                                A brief description of your first album. Discuss the themes, inspiration,
+                                and the creative process behind it.
+                            </p>
+                            <div class="album-links">
+                                <a href="#" class="album-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                    </svg>
+                                    Listen
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="album-card">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Album Two" class="album-cover">
+                        <div class="album-content">
+                            <h3 class="album-title">Album Title Two</h3>
+                            <div class="album-year">2022</div>
+                            <p class="album-description">
+                                A brief description of your second album. Mention any collaborations
+                                or special techniques used in the production.
+                            </p>
+                            <div class="album-links">
+                                <a href="#" class="album-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                    </svg>
+                                    Listen
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="album-card">
+                        <img src="/placeholder.svg?height=300&width=300" alt="EP One" class="album-cover">
+                        <div class="album-content">
+                            <h3 class="album-title">EP Title One</h3>
+                            <div class="album-year">2021</div>
+                            <p class="album-description">
+                                A brief description of your EP. Explain the concept behind it and
+                                what makes it unique in your discography.
+                            </p>
+                            <div class="album-links">
+                                <a href="#" class="album-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                    </svg>
+                                    Listen
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="music-section">
+            <div class="container">
+                <h2 class="section-title">Featured Tracks</h2>
+                <div class="track-list">
+                    <div class="track">
+                        <div class="track-number">01</div>
+                        <div class="track-info">
+                            <div class="track-title">Track Title One</div>
+                            <div class="track-duration">3:45</div>
+                        </div>
+                        <button class="track-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="track">
+                        <div class="track-number">02</div>
+                        <div class="track-info">
+                            <div class="track-title">Track Title Two</div>
+                            <div class="track-duration">4:20</div>
+                        </div>
+                        <button class="track-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="track">
+                        <div class="track-number">03</div>
+                        <div class="track-info">
+                            <div class="track-title">Track Title Three</div>
+                            <div class="track-duration">5:12</div>
+                        </div>
+                        <button class="track-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="track">
+                        <div class="track-number">04</div>
+                        <div class="track-info">
+                            <div class="track-title">Track Title Four</div>
+                            <div class="track-duration">3:58</div>
+                        </div>
+                        <button class="track-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="track">
+                        <div class="track-number">05</div>
+                        <div class="track-info">
+                            <div class="track-title">Track Title Five</div>
+                            <div class="track-duration">4:35</div>
+                        </div>
+                        <button class="track-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="music-section">
+            <div class="container">
+                <div class="music-platforms">
+                    <h2 class="section-title">Listen on Your Favorite Platform</h2>
+                    <div class="platform-links">
+                        <a href="#" class="platform-link">
+                            <div class="platform-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18V5l12-2v13"></path>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <circle cx="18" cy="16" r="3"></circle>
+                                </svg>
+                            </div>
+                            <span>Spotify</span>
+                        </a>
+                        <a href="#" class="platform-link">
+                            <div class="platform-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                            </div>
+                            <span>Apple Music</span>
+                        </a>
+                        <a href="#" class="platform-link">
+                            <div class="platform-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                            </div>
+                            <span>SoundCloud</span>
+                        </a>
+                        <a href="#" class="platform-link">
+                            <div class="platform-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="platform-link">
+                            <div class="platform-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                </svg>
+                            </div>
+                            <span>Bandcamp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Reza (PocketJack). All rights reserved.</p>
+            <p><a href="index.html">Back to Home</a></p>
+        </div>
+    </footer>
+</body>
+</html>

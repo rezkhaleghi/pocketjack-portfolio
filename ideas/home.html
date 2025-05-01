@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reza (PocketJack) | Software Engineer & Musician</title>
+    <style>
+      :root {
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #111111;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --accent: #0070f3;
+        --border: #333333;
+        --card-bg: #1a1a1a;
+        --transition: all 0.3s ease;
+
+        /* Social media brand colors */
+        --linkedin: #0077b5;
+        --github: #6e5494;
+        --youtube: #ff0000;
+        --instagram: #e1306c;
+        --patreon: #f96854;
+        --soundcloud: #ff7700;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      header {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--text-secondary);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6rem 0;
+        gap: 4rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column-reverse;
+          text-align: center;
+          padding: 4rem 0;
+        }
+
+        .social-buttons {
+          justify-content: center;
+        }
+      }
+
+      .hero-content {
+        flex: 1;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .profile-image {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--accent);
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        background: linear-gradient(to right, #ffffff, #0070f3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+
+      .cta-button:hover {
+        background-color: #0058c7;
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+
+      /* Enhanced social buttons styling */
+      .social-buttons-container {
+        margin-top: 2.5rem;
+      }
+
+      .social-buttons-title {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .social-buttons {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .social-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #0c0c0c, #1a1a1a);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3),
+          -5px -5px 10px rgba(30, 30, 30, 0.1);
+        color: var(--text-secondary);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        border: none;
+      }
+
+      .social-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 1;
+      }
+
+      .social-button svg {
+        position: relative;
+        z-index: 2;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .social-button:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        text-decoration: none;
+      }
+
+      .social-button:hover::before {
+        transform: translateY(0);
+      }
+
+      /* Individual social button hover colors */
+      .social-linkedin:hover {
+        color: var(--linkedin);
+        box-shadow: 0 10px 20px rgba(0, 119, 181, 0.3);
+      }
+
+      .social-github:hover {
+        color: var(--github);
+        box-shadow: 0 10px 20px rgba(110, 84, 148, 0.3);
+      }
+
+      .social-youtube:hover {
+        color: var(--youtube);
+        box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+      }
+
+      .social-instagram:hover {
+        color: var(--instagram);
+        box-shadow: 0 10px 20px rgba(225, 48, 108, 0.3);
+      }
+
+      .social-patreon:hover {
+        color: var(--patreon);
+        box-shadow: 0 10px 20px rgba(249, 104, 84, 0.3);
+      }
+
+      .social-soundcloud:hover {
+        color: var(--soundcloud);
+        box-shadow: 0 10px 20px rgba(255, 119, 0, 0.3);
+      }
+
+      /* Floating animation for social buttons */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .social-button:nth-child(1) {
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 0s;
+      }
+
+      .social-button:nth-child(2) {
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      .social-button:nth-child(3) {
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      .social-button:nth-child(4) {
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+
+      .social-button:nth-child(5) {
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 4s;
+      }
+
+      .social-button:nth-child(6) {
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 5s;
+      }
+
+      .section {
+        padding: 5rem 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 1.5rem;
+        transition: var(--transition);
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent);
+      }
+
+      .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .card-content {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+      }
+
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .project-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+      }
+
+      .music-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .music-cover {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        transition: var(--transition);
+      }
+
+      .music-card:hover .music-cover {
+        transform: scale(1.05);
+      }
+
+      .music-platforms {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .platform-icon {
+        width: 24px;
+        height: 24px;
+        transition: var(--transition);
+      }
+
+      .platform-icon:hover {
+        transform: translateY(-3px);
+      }
+
+      .client-projects {
+        margin-top: 4rem;
+      }
+
+      .client-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .client-logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+        filter: grayscale(100%) brightness(150%);
+        transition: var(--transition);
+      }
+
+      .client-card:hover .client-logo {
+        filter: grayscale(0%) brightness(100%);
+      }
+
+      footer {
+        padding: 3rem 0;
+        text-align: center;
+        border-top: 1px solid var(--border);
+        color: var(--text-secondary);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .social-icon {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">PocketJack</div>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#client-projects">Client Work</a>
+            <a href="#music">Music</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero">
+            <div class="hero-content">
+              <h1>Reza "PocketJack"</h1>
+              <p class="subtitle">Software Engineer & Musician</p>
+              <p class="hero-description">
+                Building innovative software solutions and creating music that
+                resonates. I blend technical expertise with creative expression
+                to craft unique digital experiences.
+              </p>
+              <div style="margin-top: 2rem">
+                <a href="#contact" class="cta-button">Get in Touch</a>
+              </div>
+
+              <div class="social-buttons-container">
+                <div class="social-buttons-title">Connect With Me</div>
+                <div class="social-buttons">
+                  <a
+                    href="https://linkedin.com/in/pocketjack"
+                    target="_blank"
+                    class="social-button social-linkedin"
+                    title="LinkedIn"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                      ></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/pocketjack"
+                    target="_blank"
+                    class="social-button social-github"
+                    title="GitHub"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                      ></path>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://youtube.com/pocketjack"
+                    target="_blank"
+                    class="social-button social-youtube"
+                    title="YouTube"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                      ></path>
+                      <polygon
+                        points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                      ></polygon>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://instagram.com/pocketjack"
+                    target="_blank"
+                    class="social-button social-instagram"
+                    title="Instagram"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        ry="5"
+                      ></rect>
+                      <path
+                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                      ></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://patreon.com/pocketjack"
+                    target="_blank"
+                    class="social-button social-patreon"
+                    title="Patreon"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="4"></circle>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://soundcloud.com/pocketjack"
+                    target="_blank"
+                    class="social-button social-soundcloud"
+                    title="SoundCloud"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M2 12h1"></path>
+                      <path d="M6 12h1"></path>
+                      <path d="M10 12h1"></path>
+                      <path d="M14 12h1"></path>
+                      <path d="M18 12h1"></path>
+                      <path d="M4 18V6"></path>
+                      <path d="M8 18V6"></path>
+                      <path d="M12 18V6"></path>
+                      <path d="M16 18V6"></path>
+                      <path d="M20 18V6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img
+                src="/placeholder.svg?height=300&width=300"
+                alt="Reza (PocketJack)"
+                class="profile-image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div style="max-width: 800px; margin: 0 auto; text-align: center">
+            <p style="margin-bottom: 1.5rem">
+              Hello! I'm Reza, also known as PocketJack. I'm a passionate
+              software engineer and musician with a love for creating both
+              functional applications and expressive music.
+            </p>
+            <p style="margin-bottom: 1.5rem">
+              My technical journey has led me through various technologies
+              including Rust, which I'm currently using with the Yew framework.
+              I believe in clean, efficient code that solves real problems.
+            </p>
+            <p>
+              When I'm not coding, you'll find me creating music, exploring new
+              sounds, and pushing the boundaries of my creative expression.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Personal Projects</h2>
+          <div class="cards">
+            <div class="card">
+              <img
+                src="/placeholder.svg?height=180&width=300"
+                alt="Project One"
+                class="project-image"
+              />
+              <h3 class="card-title">Project One</h3>
+              <p class="card-content">
+                A description of your first project. Explain what technologies
+                you used and what problems it solves.
+              </p>
+              <a
+                href="https://github.com/pocketjack/project-one"
+                class="card-link"
+                >View Project →</a
+              >
+            </div>
+            <div class="card">
+              <img
+                src="/placeholder.svg?height=180&width=300"
+                alt="Project Two"
+                class="project-image"
+              />
+              <h3 class="card-title">Project Two</h3>
+              <p class="card-content">
+                A description of your second project. Highlight your role and
+                the impact of this project.
+              </p>
+              <a
+                href="https://github.com/pocketjack/project-two"
+                class="card-link"
+                >View Project →</a
+              >
+            </div>
+            <div class="card">
+              <img
+                src="/placeholder.svg?height=180&width=300"
+                alt="Project Three"
+                class="project-image"
+              />
+              <h3 class="card-title">Project Three</h3>
+              <p class="card-content">
+                A description of your third project. Mention any challenges you
+                overcame during development.
+              </p>
+              <a
+                href="https://github.com/pocketjack/project-three"
+                class="card-link"
+                >View Project →</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="client-projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Client Projects</h2>
+          <div class="cards">
+            <div class="card client-card">
+              <img
+                src="/placeholder.svg?height=80&width=80"
+                alt="Client One Logo"
+                class="client-logo"
+              />
+              <h3 class="card-title">Client Project One</h3>
+              <p class="card-content">
+                Description of the project you developed for this client.
+                Highlight the challenges, your approach, and the results
+                achieved.
+              </p>
+              <div style="margin-top: 1rem">
+                <span
+                  style="
+                    color: var(--accent);
+                    font-weight: 600;
+                    margin-right: 0.5rem;
+                  "
+                  >Technologies:</span
+                >
+                <span>Rust, WebAssembly, React</span>
+              </div>
+            </div>
+            <div class="card client-card">
+              <img
+                src="/placeholder.svg?height=80&width=80"
+                alt="Client Two Logo"
+                class="client-logo"
+              />
+              <h3 class="card-title">Client Project Two</h3>
+              <p class="card-content">
+                Description of the project you developed for this client.
+                Explain the business problem and how your solution addressed it.
+              </p>
+              <div style="margin-top: 1rem">
+                <span
+                  style="
+                    color: var(--accent);
+                    font-weight: 600;
+                    margin-right: 0.5rem;
+                  "
+                  >Technologies:</span
+                >
+                <span>TypeScript, Node.js, MongoDB</span>
+              </div>
+            </div>
+            <div class="card client-card">
+              <img
+                src="/placeholder.svg?height=80&width=80"
+                alt="Client Three Logo"
+                class="client-logo"
+              />
+              <h3 class="card-title">Client Project Three</h3>
+              <p class="card-content">
+                Description of the project you developed for this client.
+                Mention any specific requirements and how you met or exceeded
+                expectations.
+              </p>
+              <div style="margin-top: 1rem">
+                <span
+                  style="
+                    color: var(--accent);
+                    font-weight: 600;
+                    margin-right: 0.5rem;
+                  "
+                  >Technologies:</span
+                >
+                <span>Python, Django, PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="music" class="section">
+        <div class="container">
+          <h2 class="section-title">Music</h2>
+          <div class="cards">
+            <div class="card music-card">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Album/Track One"
+                class="music-cover"
+              />
+              <h3 class="card-title">Album/Track One</h3>
+              <p class="card-content">
+                Description of your first musical work. Talk about the
+                inspiration and style.
+              </p>
+              <div class="music-platforms">
+                <a
+                  href="https://soundcloud.com/pocketjack/track-one"
+                  title="Listen on SoundCloud"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12h1"></path>
+                    <path d="M6 12h1"></path>
+                    <path d="M10 12h1"></path>
+                    <path d="M14 12h1"></path>
+                    <path d="M18 12h1"></path>
+                    <path d="M4 18V6"></path>
+                    <path d="M8 18V6"></path>
+                    <path d="M12 18V6"></path>
+                    <path d="M16 18V6"></path>
+                    <path d="M20 18V6"></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://open.spotify.com/artist/pocketjack"
+                  title="Listen on Spotify"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 11.2A5.6 5.6 0 0 1 16 8"></path>
+                    <path d="M8 14a3 3 0 0 1 4.8-2.4"></path>
+                    <path d="M8 16.8A5.6 5.6 0 0 1 16 14"></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://youtube.com/pocketjack"
+                  title="Listen on YouTube"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                    ></path>
+                    <polygon
+                      points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                    ></polygon>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card music-card">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Album/Track Two"
+                class="music-cover"
+              />
+              <h3 class="card-title">Album/Track Two</h3>
+              <p class="card-content">
+                Description of your second musical work. Mention any
+                collaborations or special techniques.
+              </p>
+              <div class="music-platforms">
+                <a
+                  href="https://soundcloud.com/pocketjack/track-two"
+                  title="Listen on SoundCloud"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12h1"></path>
+                    <path d="M6 12h1"></path>
+                    <path d="M10 12h1"></path>
+                    <path d="M14 12h1"></path>
+                    <path d="M18 12h1"></path>
+                    <path d="M4 18V6"></path>
+                    <path d="M8 18V6"></path>
+                    <path d="M12 18V6"></path>
+                    <path d="M16 18V6"></path>
+                    <path d="M20 18V6"></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://open.spotify.com/artist/pocketjack"
+                  title="Listen on Spotify"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 11.2A5.6 5.6 0 0 1 16 8"></path>
+                    <path d="M8 14a3 3 0 0 1 4.8-2.4"></path>
+                    <path d="M8 16.8A5.6 5.6 0 0 1 16 14"></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://youtube.com/pocketjack"
+                  title="Listen on YouTube"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                    ></path>
+                    <polygon
+                      points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                    ></polygon>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card music-card">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Album/Track Three"
+                class="music-cover"
+              />
+              <h3 class="card-title">Album/Track Three</h3>
+              <p class="card-content">
+                Description of your third musical work. Share what makes this
+                piece unique.
+              </p>
+              <div class="music-platforms">
+                <a
+                  href="https://soundcloud.com/pocketjack/track-three"
+                  title="Listen on SoundCloud"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12h1"></path>
+                    <path d="M6 12h1"></path>
+                    <path d="M10 12h1"></path>
+                    <path d="M14 12h1"></path>
+                    <path d="M18 12h1"></path>
+                    <path d="M4 18V6"></path>
+                    <path d="M8 18V6"></path>
+                    <path d="M12 18V6"></path>
+                    <path d="M16 18V6"></path>
+                    <path d="M20 18V6"></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://open.spotify.com/artist/pocketjack"
+                  title="Listen on Spotify"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 11.2A5.6 5.6 0 0 1 16 8"></path>
+                    <path d="M8 14a3 3 0 0 1 4.8-2.4"></path>
+                    <path d="M8 16.8A5.6 5.6 0 0 1 16 14"></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://youtube.com/pocketjack"
+                  title="Listen on YouTube"
+                >
+                  <svg
+                    class="platform-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                    ></path>
+                    <polygon
+                      points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                    ></polygon>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="container">
+          <h2 class="section-title">Experience</h2>
+          <div style="max-width: 800px; margin: 0 auto">
+            <div style="margin-bottom: 3rem">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 style="font-size: 1.25rem">Senior Software Engineer</h3>
+                <span style="color: var(--text-secondary)">2020 - Present</span>
+              </div>
+              <div style="color: var(--accent); margin-bottom: 1rem">
+                Company Name
+              </div>
+              <p style="color: var(--text-secondary)">
+                Description of your responsibilities and achievements in this
+                role. Highlight key projects and technologies you worked with.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 3rem">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 style="font-size: 1.25rem">Software Developer</h3>
+                <span style="color: var(--text-secondary)">2018 - 2020</span>
+              </div>
+              <div style="color: var(--accent); margin-bottom: 1rem">
+                Previous Company
+              </div>
+              <p style="color: var(--text-secondary)">
+                Description of your responsibilities and achievements in this
+                role. Mention any promotions or special recognition you
+                received.
+              </p>
+            </div>
+
+            <div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 style="font-size: 1.25rem">Junior Developer</h3>
+                <span style="color: var(--text-secondary)">2016 - 2018</span>
+              </div>
+              <div style="color: var(--accent); margin-bottom: 1rem">
+                First Company
+              </div>
+              <p style="color: var(--text-secondary)">
+                Description of your responsibilities and achievements in this
+                role. Explain how this position helped shape your career path.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <div style="text-align: center; max-width: 600px; margin: 0 auto">
+            <p style="margin-bottom: 2rem; color: var(--text-secondary)">
+              Interested in working together or have questions about my work?
+              Feel free to reach out through any of the channels below.
+            </p>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+              "
+            >
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem">Email</h3>
+                <a href="mailto:your.email@example.com"
+                  >your.email@example.com</a
+                >
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem">
+                  GitHub
+                </h3>
+                <a href="https://github.com/yourusername" target="_blank"
+                  >github.com/yourusername</a
+                >
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem">
+                  LinkedIn
+                </h3>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"
+                  >linkedin.com/in/yourusername</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="#" class="social-icon" title="GitHub">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" title="LinkedIn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" title="Twitter">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+              ></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" title="SoundCloud">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M2 12h1"></path>
+              <path d="M6 12h1"></path>
+              <path d="M10 12h1"></path>
+              <path d="M14 12h1"></path>
+              <path d="M18 12h1"></path>
+              <path d="M4 18V6"></path>
+              <path d="M8 18V6"></path>
+              <path d="M12 18V6"></path>
+              <path d="M16 18V6"></path>
+              <path d="M20 18V6"></path>
+            </svg>
+          </a>
+        </div>
+        <p>© 2025 Reza (PocketJack). All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
