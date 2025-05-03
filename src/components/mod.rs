@@ -1,13 +1,9 @@
-
-pub mod footer;
+pub mod app;
 pub mod header;
+pub mod hero;
+pub mod about;
 pub mod projects;
-pub mod home;
-
-
-pub use footer::Footer;
-pub use home::Home;
-pub use projects::Projects;
-pub use header::Header;
-
-
+pub mod music;
+pub mod contact;
+pub mod back_to_up;
+pub mod footer;
