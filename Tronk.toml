@@ -1,0 +1,4 @@
+[build]
+dist = "dist"
+public_url = "/"
+static_dir = "static"

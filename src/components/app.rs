@@ -1,12 +1,15 @@
 use yew::prelude::*;
-use crate::components::header::Header;
-use crate::components::hero::Hero;
-use crate::components::about::About;
-use crate::components::projects::Projects;
-use crate::components::music::Music;
-use crate::components::contact::Contact;
-use crate::components::footer::Footer;
-// use crate::components::back_to_top::BackToTop; // Removed as the module does not exist
+use crate::components::{
+    header::Header,
+    hero::Hero,
+    about::About,
+    projects::Projects,
+    client_project::ClientProjects,
+    music::Music,
+    experience::Experience, 
+    contact::Contact,
+    footer::Footer,
+};
 
 #[function_component(App)]
 pub fn app() -> Html {
@@ -17,11 +20,12 @@ pub fn app() -> Html {
                 <Hero />
                 <About />
                 <Projects />
+                <ClientProjects />
                 <Music />
+                <Experience />
                 <Contact />
             </main>
             <Footer />
-            //             <BackToTop /> // Removed as the component does not exist
         </>
     }
 }

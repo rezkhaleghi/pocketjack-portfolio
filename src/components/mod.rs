@@ -1,9 +1,10 @@
+pub mod about;
 pub mod app;
+pub mod client_project;
+pub mod contact;
+pub mod experience;
+pub mod footer;
 pub mod header;
 pub mod hero;
-pub mod about;
-pub mod projects;
 pub mod music;
-pub mod contact;
-pub mod back_to_up;
-pub mod footer;
+pub mod projects;
