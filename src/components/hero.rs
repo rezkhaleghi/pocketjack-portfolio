@@ -67,7 +67,7 @@ pub fn hero() -> Html {
                         </div>
                     </div>
                     <div class="hero-image">
-                        <img src="/static/project1.jpg" alt="Reza (PocketJack)" class="profile-image"/>
+                        <img src="../static/project1.jpg" alt="Reza (PocketJack)" class="profile-image"/>
                     </div>
                 </div>
             </div>

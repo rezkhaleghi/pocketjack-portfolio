@@ -8,7 +8,7 @@ pub fn music() -> Html {
                 <h2 class="section-title">{ "Music" }</h2>
                 <div class="cards">
                     <div class="card music-card">
-                        <img src="/static/music1.jpg" alt="Album/Track One" class="music-cover"/>
+                        <img src="./static/music1.jpg" alt="Album/Track One" class="music-cover"/>
                         <h3 class="card-title">{ "Album/Track One" }</h3>
                         <p class="card-content">
                             { "Description of your first musical work. Talk about the inspiration and style." }
@@ -45,7 +45,7 @@ pub fn music() -> Html {
                         </div>
                     </div>
                     <div class="card music-card">
-                        <img src="/static/music1.jpg" alt="Album/Track Two" class="music-cover"/>
+                        <img src="./static/music1.jpg" alt="Album/Track Two" class="music-cover"/>
                         <h3 class="card-title">{ "Album/Track Two" }</h3>
                         <p class="card-content">
                             { "Description of your second musical work. Mention any collaborations or special techniques." }
@@ -82,7 +82,7 @@ pub fn music() -> Html {
                         </div>
                     </div>
                     <div class="card music-card">
-                        <img src="/static/music1.jpg" alt="Album/Track Three" class="music-cover"/>
+                        <img src="./static/music1.jpg" alt="Album/Track Three" class="music-cover"/>
                         <h3 class="card-title">{ "Album/Track Three" }</h3>
                         <p class="card-content">
                             { "Description of your third musical work. Share what makes this piece unique." }
