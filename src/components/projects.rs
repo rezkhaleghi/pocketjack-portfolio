@@ -9,7 +9,7 @@ pub fn projects() -> Html {
             "Fair-Fly",
             "Fair Fly is a web-based app that helps users find and compare affordable flight deals across multiple providers. Its core feature is a smart price alert system that notifies users when fares drop to their preferred price.",
             vec![("View Website →", "https://fair-fly.site")],
-            "Rust, WebAssembly, MongoDB"
+            "Rust, WebAssembly, actix-web, Yew, MongoDB"
         ),
         (
             "./static/jorcolab.jpg",
@@ -65,7 +65,7 @@ pub fn projects() -> Html {
     html! {
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section-title">{ "Personal Projects" }</h2>
+                <h2 class="section-title">{ "Personal Projects (FalseFoundation)" }</h2>
                 <div class="cards">
                     {
                         grid_projects.iter().map(|(img, title, desc, links, tech)| {

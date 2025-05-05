@@ -54,14 +54,15 @@ pub fn music() -> Html {
                         </div>
                     </div>
                     <div class="card music-card">
-                        <iframe
+                      <iframe
                             class="music-cover"
                             width="100%"
                             height="200"
-                            scrolling="no"
-                            frameborder="no"
-                            allow="autoplay"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/farigo-music/perfection&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"
+                            src="https://www.youtube.com/embed/Iov95aS-O7U"
+                            title="Farigo - Perfection"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen= true
                         ></iframe>
                         <h3 class="card-title">{ "Farigo - Perfection" }</h3>
                         <p class="card-content">
@@ -128,6 +129,19 @@ pub fn music() -> Html {
                                     <path d="M20 18V6"></path>
                                 </svg>
                             </a>
+
+
+                                              <a href="https://open.spotify.com/album/5hvV1cVf9EkJu9tvFHxE5L?si=1ysLkteqSpGv322yCOzctw" title="Listen on Spotify">
+                                <svg class="platform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M8 11.2A5.6 5.6 0 0 1 16 8"></path>
+                                    <path d="M8 14a3 3 0 0 1 4.8-2.4"></path>
+                                    <path d="M8 16.8A5.6 5.6 0 0 1 16 14"></path>
+                                </svg>
+                            </a>
+                    
+
+
                             <a href="https://www.youtube.com/watch?v=7dofpxeOHCw" title="Listen on YouTube">
                                 <svg class="platform-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>

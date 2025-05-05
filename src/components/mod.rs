@@ -8,3 +8,4 @@ pub mod header;
 pub mod hero;
 pub mod music;
 pub mod projects;
+pub mod skills;

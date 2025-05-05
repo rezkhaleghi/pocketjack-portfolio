@@ -9,6 +9,7 @@ use crate::components::{
     experience::Experience, 
     contact::Contact,
     footer::Footer,
+    skills::Skills,
 };
 
 #[function_component(App)]
@@ -19,6 +20,7 @@ pub fn app() -> Html {
             <main>
                 <Hero />
                 <About />
+                <Skills />
                 <Projects />
                 <ClientProjects />
                 <Music />
