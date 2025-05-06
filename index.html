@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reza (PocketJack) | Software Engineer & Musician</title>
+    <title>PocketJack Portfolio</title>
     <style>
       :root {
         --bg-primary: #0a0a0a;
@@ -421,23 +421,44 @@
       }
 
       /* Slider styles */
-      .slider {
+      .slider-container-wrapper {
         position: relative;
         width: 100%;
-        max-width: 360px; /* Matches grid card width */
-        margin: 2rem auto 0;
+        padding: 0 60px;
+        margin: 0 auto;
+      }
+
+      .projects-slider {
+        width: 100%;
         overflow: hidden;
-      }
-
-      .slider-container {
-        width: 100%;
-        height: auto;
         position: relative;
       }
 
-      .slider-wrapper {
+      .slider-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
         width: 100%;
-        transition: opacity 0.5s ease-in-out;
+      }
+
+      .slider-page {
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-shrink: 0;
+      }
+
+      .slider-card {
+        flex: 1;
+        min-width: 0; /* Important for flexbox children to properly size */
+        display: flex;
+        flex-direction: column;
+      }
+
+      .slider-card .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
       }
 
       .slider-nav {
@@ -451,33 +472,134 @@
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
         transition: var(--transition);
         z-index: 10;
-      }
-
-      .slider-nav:disabled {
-        background-color: var(--text-secondary);
-        cursor: not-allowed;
-        opacity: 0.5;
+        opacity: 0.8;
       }
 
       .slider-nav:hover:not(:disabled) {
+        opacity: 1;
         background-color: #0058c7;
         transform: translateY(-50%) scale(1.1);
       }
 
+      .slider-nav:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
       .slider-prev {
-        left: -50px;
+        left: 10px;
       }
 
       .slider-next {
-        right: -50px;
+        right: 10px;
+      }
+
+      /* Slide indicators */
+      .slider-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .slider-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--text-secondary);
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        opacity: 0.5;
+      }
+
+      .slider-indicator:hover {
+        opacity: 0.8;
+      }
+
+      .slider-indicator.active {
+        background-color: var(--accent);
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .slider-page {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .slider-card {
+          width: 100%;
+          max-width: 350px;
+          margin-bottom: 20px;
+        }
+
+        .slider-container-wrapper {
+          padding: 0 50px;
+        }
       }
 
       @media (max-width: 768px) {
-        .slider {
-          max-width: 300px;
+        .slider-container-wrapper {
+          padding: 0 40px;
+        }
+
+        .slider-nav {
+          width: 36px;
+          height: 36px;
+          font-size: 1.2rem;
+        }
+
+        .slider-prev {
+          left: 5px;
+        }
+
+        .slider-next {
+          right: 5px;
+        }
+      }
+
+      /* Slide indicators */
+      .slider-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .slider-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--text-secondary);
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        opacity: 0.5;
+      }
+
+      .slider-indicator:hover {
+        opacity: 0.8;
+      }
+
+      .slider-indicator.active {
+        background-color: var(--accent);
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .slider-container-wrapper {
+          padding: 0 40px;
         }
 
         .slider-nav {
@@ -487,14 +609,33 @@
         }
 
         .slider-prev {
-          left: -40px;
+          left: 5px;
         }
 
         .slider-next {
-          right: -40px;
+          right: 5px;
         }
       }
 
+      /* Enhanced card styling in the slider */
+      .slider-card .card {
+        width: 100%;
+        max-width: 350px;
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--border);
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .slider-card .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent);
+      }
       /* New Skills Section Styling */
       .skills-list {
         display: flex;
