@@ -9,32 +9,44 @@ pub fn experience() -> Html {
                 <div style="max-width: 800px; margin: 0 auto;">
                     <div style="margin-bottom: 3rem;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.25rem;">{ "Senior Software Engineer" }</h3>
-                            <span style="color: var(--text-secondary);">{ "2020 - Present" }</span>
+                            <h3 style="font-size: 1.25rem;">{ "Software Engineer" }</h3>
+                            <span style="color: var(--text-secondary);">{ "2024 - Present" }</span>
                         </div>
-                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "Company Name" }</div>
+                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "Unicorn Forex Broker" }</div>
                         <p style="color: var(--text-secondary);">
-                            { "Description of your responsibilities and achievements in this role. Highlight key projects and technologies you worked with." }
+                            { "Assisted in developing secure wallet custody systems and independently created an air-gapped encryption solution for private key management. Designed and implemented a multi-chain blockchain explorer to streamline transaction tracking across networks. Focused on optimizing workflows and enhancing security in blockchain-based financial services." }
                         </p>
                     </div>
                     <div style="margin-bottom: 3rem;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.25rem;">{ "Software Developer" }</h3>
-                            <span style="color: var(--text-secondary);">{ "2018 - 2020" }</span>
+                            <h3 style="font-size: 1.25rem;">{ "Lead BackEnd Developer" }</h3>
+                            <span style="color: var(--text-secondary);">{ "2022 - Present" }</span>
                         </div>
-                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "Previous Company" }</div>
+                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "TMAR" }</div>
                         <p style="color: var(--text-secondary);">
-                            { "Description of your responsibilities and achievements in this role. Mention any promotions or special recognition you received." }
+                            { "Pioneered the development of TMAR Travel from scratch, architecting the entire backend, design patterns, and structures.
+Continuously enhanced and maintained the platform, enabling users to request off-road vehicles with professional drivers for their trips.
+Managed a small group of developers and designers, ensuring effective collaboration and project delivery." }
                         </p>
                     </div>
-                    <div>
+                    <div style="margin-bottom: 3rem;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.25rem;">{ "Junior Developer" }</h3>
-                            <span style="color: var(--text-secondary);">{ "2016 - 2018" }</span>
+                            <h3 style="font-size: 1.25rem;">{ "BackEnd Developer" }</h3>
+                            <span style="color: var(--text-secondary);">{ "2020 - 2022" }</span>
                         </div>
-                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "First Company" }</div>
+                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "DigiAlpha Agency" }</div>
                         <p style="color: var(--text-secondary);">
-                            { "Description of your responsibilities and achievements in this role. Explain how this position helped shape your career path." }
+                            { "Played a pivotal role in developing several blockChain projects for DigiAlpha, contributing to the company's web development portfolio and success as a business landing page." }
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 3rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <h3 style="font-size: 1.25rem;">{ "Web Developer" }</h3>
+                            <span style="color: var(--text-secondary);">{ "2016 - Present" }</span>
+                        </div>
+                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "DigiAlpha Agency" }</div>
+                        <p style="color: var(--text-secondary);">
+                            { "Played a pivotal role in developing several blockChain projects for DigiAlpha, contributing to the company's web development portfolio and success as a business landing page." }
                         </p>
                     </div>
                 </div>

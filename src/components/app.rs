@@ -1,6 +1,6 @@
 use yew::prelude::*;
 use crate::components::{
-    header::Header,
+    // header::Header,
     hero::Hero,
     about::About,
     projects::Projects,
@@ -16,7 +16,7 @@ use crate::components::{
 pub fn app() -> Html {
     html! {
         <>
-            <Header />
+            // <Header />
             <main>
                 <Hero />
                 <About />

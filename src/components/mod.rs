@@ -4,7 +4,7 @@ pub mod client_project;
 pub mod contact;
 pub mod experience;
 pub mod footer;
-pub mod header;
+// pub mod header;
 pub mod hero;
 pub mod music;
 pub mod projects;

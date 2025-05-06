@@ -36,11 +36,18 @@ pub fn projects() -> Html {
             "Rust, crossterm"
         ),
         (
-            "./static/newproject.jpg",
-            "New Project",
-            "A placeholder project to test the slider functionality.",
-            vec![("View Project →", "https://newproject.com")],
-            "Rust, Yew"
+            "./static/falseplayer.jpg",
+            "PJ-Grep",
+            "A fast, flexible pattern search tool for files and directories. Easily search for patterns in filenames and content, filter by file extensions, and get color-coded results.",
+            vec![("View Project →", "https://github.com/rezkhaleghi/pj-grep")],
+            "Rust"
+        ),
+        (
+            "./static/falseplayer.jpg",
+            "THIS WEBSITE :)",
+            "I built this website using Yew, a Rust framework for creating web applications. It showcases my projects and skills, and serves as a portfolio to demonstrate my work.",
+            vec![("View Website →", "https://reza.false.foundation")],
+            "Rust, Yew, WebAssembly"
         ),
     ];
 

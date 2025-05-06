@@ -27,6 +27,15 @@ pub fn client_project() -> Html {
             ],
             "Node.Js, MongoDB"
         ),
+        (
+            "./static/falseplayer.jpg",
+            "Knowledge Management System(KMS)",
+            "I successfully developed the backend of a Knowledge Management System (KMS) that functions as a social network for knowledge sharing and collaboration, using the KeystoneJS framework, a simple and flexible Node.js framework. This project involved creating a robust and scalable platform that enables users to connect, share insights, and manage knowledge assets within an organization.",
+            vec![
+                // ("View Project →", "https://poudiguitar.com"),
+            ],
+            "KeystoneJS, PostgreSQL, GraphQL, Node.Js"
+        ),
     ];
 
     let (grid_projects, slider_projects) = projects.split_at(3);

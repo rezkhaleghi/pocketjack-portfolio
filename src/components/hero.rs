@@ -12,9 +12,9 @@ pub fn hero() -> Html {
                         <p class="hero-description">
                             { "Building innovative software solutions and creating music that resonates. I blend technical expertise with creative expression to craft unique digital experiences." }
                         </p>
-                        <div style="margin-top: 2rem;">
-                            <a href="#contact" class="cta-button">{ "Get in Touch" }</a>
-                        </div>
+                        // <div style="margin-top: 2rem;">
+                        //     <a href="#contact" class="cta-button">{ "Get in Touch" }</a>
+                        // </div>
                         <div class="social-buttons-container">
                             <div class="social-buttons-title">{ "Connect With Me" }</div>
                             <div class="social-buttons">
