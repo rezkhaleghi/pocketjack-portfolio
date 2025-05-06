@@ -450,7 +450,7 @@
 
       .slider-card {
         flex: 1;
-        min-width: 0; /* Important for flexbox children to properly size */
+        min-width: 0;
         display: flex;
         flex-direction: column;
       }
@@ -459,6 +459,20 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+        width: calc(33.33% - 1.33rem); /* Adjusted for 3 cards with 20px gap */
+        max-width: 350px;
+        min-height: 450px;
+        border: 1px solid var(--border);
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .slider-card .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent);
       }
 
       .slider-nav {
@@ -500,7 +514,6 @@
         right: 10px;
       }
 
-      /* Slide indicators */
       .slider-indicators {
         display: flex;
         justify-content: center;
@@ -529,7 +542,12 @@
         transform: scale(1.2);
       }
 
-      /* Responsive adjustments */
+      @media (max-width: 1200px) {
+        .slider-card .card {
+          width: calc(25% - 1.5rem); /* 4 cards on medium screens */
+        }
+      }
+
       @media (max-width: 992px) {
         .slider-page {
           flex-direction: column;
@@ -566,56 +584,7 @@
           right: 5px;
         }
       }
-
       /* Slide indicators */
-      .slider-indicators {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-      }
-
-      .slider-indicator {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: var(--text-secondary);
-        border: none;
-        cursor: pointer;
-        transition: var(--transition);
-        opacity: 0.5;
-      }
-
-      .slider-indicator:hover {
-        opacity: 0.8;
-      }
-
-      .slider-indicator.active {
-        background-color: var(--accent);
-        opacity: 1;
-        transform: scale(1.2);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .slider-container-wrapper {
-          padding: 0 40px;
-        }
-
-        .slider-nav {
-          width: 30px;
-          height: 30px;
-          font-size: 1.2rem;
-        }
-
-        .slider-prev {
-          left: 5px;
-        }
-
-        .slider-next {
-          right: 5px;
-        }
-      }
 
       /* Enhanced card styling in the slider */
       .slider-card .card {

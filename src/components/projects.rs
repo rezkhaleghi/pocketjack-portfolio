@@ -56,7 +56,7 @@ pub fn projects() -> Html {
     ];
 
     let total_projects = projects.len();
-    let cards_per_slide = 3;
+    let cards_per_slide = 5; // Updated to show 5 cards per slide
     let need_slider = total_projects > cards_per_slide;
     
     let total_slides = if need_slider {
@@ -131,7 +131,7 @@ pub fn projects() -> Html {
                 
                 {
                     if !need_slider {
-                        // Standard grid view for 3 or fewer projects
+                        // Standard grid view for 5 or fewer projects
                         html! {
                             <div class="cards">
                                 {
@@ -159,7 +159,7 @@ pub fn projects() -> Html {
                             </div>
                         }
                     } else {
-                        // Carousel view with 3 items per slide
+                        // Carousel view with 5 items per slide
                         html! {
                             <div class="slider-container-wrapper" onmouseenter={on_mouse_enter} onmouseleave={on_mouse_leave}>
                                 <button 
