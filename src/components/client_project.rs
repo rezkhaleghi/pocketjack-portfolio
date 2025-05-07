@@ -1,10 +1,10 @@
+// client_projects.rs
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
-use std::rc::Rc;
 
 #[function_component(ClientProjects)]
-pub fn client_project() -> Html {
+pub fn client_projects() -> Html {
     let current_slide = use_state(|| 0);
     let is_paused = use_state(|| false);
     let projects = vec![
@@ -43,11 +43,25 @@ pub fn client_project() -> Html {
             vec![],
             "Node.Js, Stellar Blockchain, MongoDB"
         ),
+        (
+            "./static/falseplayer.jpg",
+            "Wallet Custody",
+            "Wallet Custody is a high-performance backend system designed to interface directly with multiple blockchain nodes (e.g., BTC, ETH, TRX, DOGE). It connects to these nodes to read blocks, monitor transactions in real time, and extract on-chain data critical for exchange and broker operations. Serving as the backbone of trading platforms, Wallet Custody ensures reliable transaction tracking, wallet activity monitoring, and seamless multi-chain support—all built with scalability and security in mind.",
+            vec![],
+            "Nest.Js, MongoDB, Redis, RabbitMQ, bitcoin-core, web3.js"
+        ),
     ];
 
     let total_projects = projects.len();
-    let cards_per_slide = 3; // Adjusted to 3 to ensure slider activates with 4 projects
-    let total_slides = (total_projects as f32 / cards_per_slide as f32).ceil() as usize; // Always calculate slides
+    let cards_per_slide = 3; // Updated to show 5 cards per slide
+    let need_slider = total_projects > cards_per_slide;
+    
+    let total_slides = if need_slider {
+        (total_projects as f32 / cards_per_slide as f32).ceil() as usize
+    } else {
+        1
+    };
+    
     let current = *current_slide;
 
     let next_slide = {
@@ -110,87 +124,123 @@ pub fn client_project() -> Html {
     html! {
         <section id="client-projects" class="section">
             <div class="container">
-                <h2 class="section-title">{ "Clients Projects" }</h2>
-                <div class="slider-container-wrapper" onmouseenter={on_mouse_enter} onmouseleave={on_mouse_leave}>
-                    <button 
-                        class="slider-nav slider-prev" 
-                        onclick={prev_slide} 
-                        aria-label="Previous project"
-                        disabled={total_slides <= 1}
-                    >{ "←" }</button>
-                    
-                    <div class="projects-slider">
-                        <div class="slider-track" style={format!("transform: translateX({}%)", -100 * (current as isize))}>
-                            {
-                                (0..total_slides).map(|slide_index| {
-                                    let start_idx = slide_index * cards_per_slide;
-                                    let end_idx = (start_idx + cards_per_slide).min(total_projects);
-                                    let slide_projects = &projects[start_idx..end_idx];
-                                    
-                                    html! {
-                                        <div class="slider-page">
-                                            {
-                                                slide_projects.iter().map(|(img, title, desc, links, tech)| {
-                                                    html! {
-                                                        <div class="slider-card">
-                                                            <div class="card">
-                                                                <img src={*img} alt={*title} class="project-image"/>
-                                                                <h3 class="card-title">{ *title }</h3>
-                                                                <p class="card-content">{ *desc }</p>
-                                                                {
-                                                                    links.iter().map(|(text, url)| {
-                                                                        html! {
-                                                                            <a href={*url} class="card-link">{ *text }</a>
-                                                                        }
-                                                                    }).collect::<Html>()
-                                                                }
-                                                                <div style="margin-top: 1rem;">
-                                                                    <span style="color: var(--accent); font-weight: 600; margin-right: 0.5rem;">{ "Technologies:" }</span>
-                                                                    <span>{ *tech }</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                }).collect::<Html>()
-                                            }
-                                        </div>
-                                    }
-                                }).collect::<Html>()
-                            }
-                        </div>
-                    </div>
-                    
-                    <button 
-                        class="slider-nav slider-next" 
-                        onclick={next_slide} 
-                        aria-label="Next project"
-                        disabled={total_slides <= 1}
-                    >{ "→" }</button>
-                    
-                    // Add slide indicators
-                    <div class="slider-indicators">
-                        {
-                            (0..total_slides).map(|i| {
-                                let is_current = i == current;
-                                let indicator_class = if is_current { "slider-indicator active" } else { "slider-indicator" };
-                                let index = i;
-                                let current_slide_c = current_slide.clone();
-                                
-                                let on_click = Callback::from(move |_| {
-                                    current_slide_c.set(index);
-                                });
-                                
-                                html! {
-                                    <button 
-                                        class={indicator_class} 
-                                        onclick={on_click} 
-                                        aria-label={format!("Go to slide {}", i+1)}
-                                    ></button>
+                <h2 class="section-title">{ "Client Projects" }</h2>
+                
+                {
+                    if !need_slider {
+                        // Standard grid view for 5 or fewer projects
+                        html! {
+                            <div class="cards">
+                                {
+                                    projects.iter().map(|(img, title, desc, links, tech)| {
+                                        html! {
+                                            <div class="card">
+                                                <img src={*img} alt={*title} class="project-image"/>
+                                                <h3 class="card-title">{ *title }</h3>
+                                                <p class="card-content">{ *desc }</p>
+                                                {
+                                                    links.iter().map(|(text, url)| {
+                                                        html! {
+                                                            <a href={*url} class="card-link">{ *text }</a>
+                                                        }
+                                                    }).collect::<Html>()
+                                                }
+                                                <div style="margin-top: 1rem;">
+                                                    <span style="color: var(--accent); font-weight: 600; margin-right: 0.5rem;">{ "Technologies:" }</span>
+                                                    <span>{ *tech }</span>
+                                                </div>
+                                            </div>
+                                        }
+                                    }).collect::<Html>()
                                 }
-                            }).collect::<Html>()
+                            </div>
                         }
-                    </div>
-                </div>
+                    } else {
+                        // Carousel view with 5 items per slide
+                        html! {
+                            <div class="slider-container-wrapper" onmouseenter={on_mouse_enter} onmouseleave={on_mouse_leave}>
+                                <button 
+                                    class="slider-nav slider-prev" 
+                                    onclick={prev_slide} 
+                                    aria-label="Previous project"
+                                    disabled={total_slides <= 1}
+                                >{ "←" }</button>
+                                
+                                <div class="projects-slider">
+                                    <div class="slider-track" style={format!("transform: translateX({}%)", -100 * (current as isize))}>
+                                        {
+                                            (0..total_slides).map(|slide_index| {
+                                                let start_idx = slide_index * cards_per_slide;
+                                                let end_idx = (start_idx + cards_per_slide).min(total_projects);
+                                                let slide_projects = &projects[start_idx..end_idx];
+                                                
+                                                html! {
+                                                    <div class="slider-page">
+                                                        {
+                                                            slide_projects.iter().map(|(img, title, desc, links, tech)| {
+                                                                html! {
+                                                                    <div class="slider-card">
+                                                                        <div class="card">
+                                                                            <img src={*img} alt={*title} class="project-image"/>
+                                                                            <h3 class="card-title">{ *title }</h3>
+                                                                            <p class="card-content">{ *desc }</p>
+                                                                            {
+                                                                                links.iter().map(|(text, url)| {
+                                                                                    html! {
+                                                                                        <a href={*url} class="card-link">{ *text }</a>
+                                                                                    }
+                                                                                }).collect::<Html>()
+                                                                            }
+                                                                            <div style="margin-top: 1rem;">
+                                                                                <span style="color: var(--accent); font-weight: 600; margin-right: 0.5rem;">{ "Technologies:" }</span>
+                                                                                <span>{ *tech }</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                            }).collect::<Html>()
+                                                        }
+                                                    </div>
+                                                }
+                                            }).collect::<Html>()
+                                        }
+                                    </div>
+                                </div>
+                                
+                                <button 
+                                    class="slider-nav slider-next" 
+                                    onclick={next_slide} 
+                                    aria-label="Next project"
+                                    disabled={total_slides <= 1}
+                                >{ "→" }</button>
+                                
+                                // Add slide indicators
+                                <div class="slider-indicators">
+                                    {
+                                        (0..total_slides).map(|i| {
+                                            let is_current = i == current;
+                                            let indicator_class = if is_current { "slider-indicator active" } else { "slider-indicator" };
+                                            let index = i;
+                                            let current_slide_c = current_slide.clone();
+                                            
+                                            let on_click = Callback::from(move |_| {
+                                                current_slide_c.set(index);
+                                            });
+                                            
+                                            html! {
+                                                <button 
+                                                    class={indicator_class} 
+                                                    onclick={on_click} 
+                                                    aria-label={format!("Go to slide {}", i+1)}
+                                                ></button>
+                                            }
+                                        }).collect::<Html>()
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                }
             </div>
         </section>
     }

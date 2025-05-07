@@ -1,3 +1,4 @@
+// projects.rs
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
@@ -56,7 +57,7 @@ pub fn projects() -> Html {
     ];
 
     let total_projects = projects.len();
-    let cards_per_slide = 5; // Updated to show 5 cards per slide
+    let cards_per_slide = 3; // Updated to show 5 cards per slide
     let need_slider = total_projects > cards_per_slide;
     
     let total_slides = if need_slider {

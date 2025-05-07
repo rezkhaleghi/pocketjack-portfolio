@@ -44,9 +44,9 @@ Managed a small group of developers and designers, ensuring effective collaborat
                             <h3 style="font-size: 1.25rem;">{ "Web Developer" }</h3>
                             <span style="color: var(--text-secondary);">{ "2016 - Present" }</span>
                         </div>
-                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "DigiAlpha Agency" }</div>
+                        <div style="color: var(--accent); margin-bottom: 1rem;">{ "Freelance" }</div>
                         <p style="color: var(--text-secondary);">
-                            { "Played a pivotal role in developing several blockChain projects for DigiAlpha, contributing to the company's web development portfolio and success as a business landing page." }
+                            { "As a freelance developer, I’ve delivered a wide range of projects—from simple e-commerce websites to fully customized business solutions. My work spans web applications, Telegram bots, API integrations, and custom backend systems, tailored to meet unique client needs." }
                         </p>
                     </div>
                 </div>
