@@ -20,6 +20,7 @@
         --instagram: #e1306c;
         --patreon: #f96854;
         --soundcloud: #ff7700;
+        --spotify: #1db954;
       }
 
       * {
@@ -346,6 +347,7 @@
         margin-bottom: 1rem;
       }
 
+      /* Music Section */
       .music-card {
         position: relative;
         overflow: hidden;
@@ -379,6 +381,198 @@
       .platform-icon:hover {
         transform: translateY(-3px);
       }
+
+      .platform-link.platform-soundcloud:hover .platform-icon {
+        stroke: var(--soundcloud);
+      }
+
+      .platform-link.platform-spotify:hover .platform-icon {
+        stroke: var(--spotify);
+      }
+
+      .platform-link.platform-youtube:hover .platform-icon {
+        stroke: var(--youtube);
+      }
+
+      @media (max-width: 768px) {
+        .music-cover {
+          height: 180px;
+        }
+      }
+
+      /* End Music Section */
+
+      /* Experience Section */
+      .timeline {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background-color: var(--accent);
+        opacity: 0.3;
+      }
+
+      .timeline-entry {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        position: relative;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in forwards;
+        animation-delay: calc(0.2s * var(--index));
+      }
+
+      .timeline-entry.left {
+        justify-content: flex-start;
+      }
+
+      .timeline-entry.right {
+        justify-content: flex-end;
+      }
+
+      .timeline-marker {
+        width: 16px;
+        height: 16px;
+        background-color: var(--accent);
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        transition: var(--transition);
+      }
+
+      .timeline-entry:hover .timeline-marker {
+        transform: translateX(-50%) scale(1.5);
+        box-shadow: 0 0 10px var(--accent);
+      }
+
+      .timeline-content {
+        width: 50%;
+        background-color: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 8px;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .timeline-entry.left .timeline-content {
+        margin-right: 2rem;
+      }
+
+      .timeline-entry.right .timeline-content {
+        margin-left: 2rem;
+      }
+
+      .timeline-content::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+      }
+
+      .timeline-entry.left .timeline-content::before {
+        right: -20px;
+        border-left-color: var(--card-bg);
+        transform: translateY(-50%);
+      }
+
+      .timeline-entry.right .timeline-content::before {
+        left: -20px;
+        border-right-color: var(--card-bg);
+        transform: translateY(-50%);
+      }
+
+      .timeline-entry:hover .timeline-content {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      .job-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .job-date {
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      .company-name {
+        color: var(--accent);
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .job-description {
+        color: var(--text-secondary);
+        margin: 0;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .timeline::before {
+          left: 20px;
+        }
+
+        .timeline-entry {
+          justify-content: flex-start;
+          margin-bottom: 1.5rem;
+        }
+
+        .timeline-entry.left,
+        .timeline-entry.right {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .timeline-marker {
+          left: 20px;
+        }
+
+        .timeline-content {
+          width: 100%;
+          margin-left: 40px;
+          padding: 1rem;
+        }
+
+        .timeline-entry.left .timeline-content::before,
+        .timeline-entry.right .timeline-content::before {
+          left: -20px;
+          border-right-color: var(--card-bg);
+          border-left-color: transparent;
+        }
+      }
+
+      /* End Experience Section */
 
       .client-projects {
         margin-top: 4rem;
@@ -420,7 +614,6 @@
         font-size: 1.5rem;
       }
 
-      /* Slider styles */
       .slider-container-wrapper {
         position: relative;
         width: 100%;
@@ -448,7 +641,6 @@
         flex-shrink: 0;
       }
 
-      /* Add a rule for partial slides (fewer than 3 cards) */
       .slider-page:has(> .slider-card:nth-child(3):not(:last-child)) {
         justify-content: space-between;
       }
@@ -468,9 +660,9 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        width: calc(33.33% - 1.33rem); /* Adjusted for 3 cards with 20px gap */
-        max-width: 350px;
-        min-height: 450px;
+        width: calc(33.33% - 1.33rem);
+        max-width: 400px;
+        min-height: 400px;
         border: 1px solid var(--border);
         background-color: var(--card-bg);
         border-radius: 10px;
@@ -553,7 +745,7 @@
 
       @media (max-width: 1200px) {
         .slider-card .card {
-          width: calc(25% - 1.5rem); /* 4 cards on medium screens */
+          width: calc(25% - 1.5rem);
         }
       }
 
@@ -565,7 +757,7 @@
 
         .slider-card {
           width: 100%;
-          max-width: 350px;
+          max-width: 400px;
           margin-bottom: 20px;
         }
 
@@ -593,13 +785,11 @@
           right: 5px;
         }
       }
-      /* Slide indicators */
 
-      /* Enhanced card styling in the slider */
       .slider-card .card {
         width: 100%;
-        max-width: 350px;
-        min-height: 450px;
+        max-width: 400px;
+        min-height: 400px;
         display: flex;
         flex-direction: column;
         border: 1px solid var(--border);
@@ -614,19 +804,21 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         border-color: var(--accent);
       }
-      /* New Skills Section Styling */
+
       .skills-list {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
       }
+
       .skill-row {
         display: flex;
         justify-content: center;
         gap: 1.5rem;
         width: 100%;
       }
+
       .skill-card {
         display: flex;
         flex-direction: column;
