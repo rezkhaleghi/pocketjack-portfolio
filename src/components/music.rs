@@ -67,7 +67,7 @@ pub fn music() -> Html {
         MusicTrack {
             title: "Blue (demo)",
             youtube_url: "https://www.youtube.com/embed/G6mtWxIcYHA",
-            description: "Produced by PocketJack x NersiBeatz x 808Cash",
+            description: "Produced by PocketJack x NersiBeats x 808Cash",
             platforms: vec![
                 PlatformLink { url: "https://soundcloud.com/pocketjack/blue", platform: "soundcloud", title: "Listen on SoundCloud", icon: r#"<path d="M2 12h1"></path><path d="M6 12h1"></path><path d="M10 12h1"></path><path d="M14 12h1"></path><path d="M18 12h1"></path><path d="M4 18V6"></path><path d="M8 18V6"></path><path d="M12 18V6"></path><path d="M16 18V6"></path><path d="M20 18V6"></path>"# },
                 PlatformLink { url: "https://www.youtube.com/watch?v=G6mtWxIcYHA", platform: "youtube", title: "Listen on YouTube", icon: r#"<path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>"# },
@@ -87,6 +87,22 @@ pub fn music() -> Html {
             description: "A live session featuring three demo tracks by Dayan. I performed as the acoustic guitarist.",
             platforms: vec![
                 PlatformLink { url: "https://www.youtube.com/watch?v=oS6rGsPtze4", platform: "youtube", title: "Listen on YouTube", icon: r#"<path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>"# },
+            ],
+        },
+        MusicTrack {
+            title: "Trap Type Beat | FREE",
+            youtube_url: "https://youtube.com/embed/5Wh_iyh2Ino",
+            description: "Produced by PocketJack x NersiBeats",
+            platforms: vec![
+                PlatformLink { url: "https://www.youtube.com/watch?v=5Wh_iyh2Ino", platform: "youtube", title: "Listen on YouTube", icon: r#"<path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>"# },
+            ],
+        },
+        MusicTrack {
+            title: "Trap Type Beat | FREE",
+            youtube_url: "https://youtube.com/embed/5Wh_iyh2Ino",
+            description: "Produced by PocketJack x NersiBeats",
+            platforms: vec![
+                PlatformLink { url: "https://www.youtube.com/watch?v=5Wh_iyh2Ino", platform: "youtube", title: "Listen on YouTube", icon: r#"<path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>"# },
             ],
         },
     ];
