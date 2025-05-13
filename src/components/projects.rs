@@ -2,7 +2,7 @@
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
-use std::rc::Rc;
+// use std::rc::Rc;
 
 #[function_component(Projects)]
 pub fn projects() -> Html {
