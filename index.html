@@ -457,13 +457,45 @@
         box-shadow: 0 0 10px var(--accent);
       }
 
+      .timeline-image {
+        display: none;
+        position: absolute;
+        width: 200px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid var(--accent);
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .timeline-entry.left .timeline-image {
+        left: 55%;
+      }
+
+      .timeline-entry.right .timeline-image {
+        right: 55%;
+      }
+
+      .timeline-entry:hover .timeline-image {
+        display: block;
+        opacity: 1;
+        transform: translateY(-50%) scale(1.05);
+      }
+
       .timeline-content {
-        width: 50%;
+        width: 45%;
         background-color: var(--card-bg);
         padding: 1.5rem;
         border-radius: 8px;
         position: relative;
         transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
       }
 
       .timeline-entry.left .timeline-content {
@@ -524,7 +556,41 @@
 
       .job-description {
         color: var(--text-secondary);
-        margin: 0;
+        margin: 0 0 1rem 0;
+        flex-grow: 1;
+      }
+
+      .timeline-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+      }
+
+      .technologies {
+        font-size: 0.9rem;
+      }
+
+      .tech-label {
+        color: var(--accent);
+        font-weight: 600;
+        margin-right: 0.5rem;
+      }
+
+      .timeline-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .timeline-link {
+        color: var(--accent);
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+
+      .timeline-link:hover {
+        text-decoration: underline;
+        transform: translateY(-2px);
       }
 
       @keyframes fadeIn {
@@ -558,10 +624,24 @@
           left: 20px;
         }
 
+        .timeline-image {
+          display: none;
+          position: static;
+          width: 100%;
+          height: 150px;
+          margin-top: 1rem;
+        }
+
+        .timeline-entry:hover .timeline-image {
+          display: block;
+          transform: none;
+        }
+
         .timeline-content {
           width: 100%;
           margin-left: 40px;
           padding: 1rem;
+          min-height: 180px;
         }
 
         .timeline-entry.left .timeline-content::before,
@@ -569,6 +649,12 @@
           left: -20px;
           border-right-color: var(--card-bg);
           border-left-color: transparent;
+        }
+
+        .timeline-footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
         }
       }
 

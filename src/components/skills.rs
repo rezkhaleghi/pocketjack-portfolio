@@ -5,7 +5,7 @@ pub fn skills() -> Html {
     // Define the skills data
     let technical_skills = vec![
         "Rust", "WASM", "JavaScript", "TypeScript","Nest.Js","SpringBoot", "Git", "Docker",
-        "Redis", "ZeroMQ","Socketio", "Mongo DB","Postgres", "TypeORM", "GraphQL", "REST-APIs", "BlockChain", "Web3","HTML"
+        "Redis", "ZeroMQ","Socketio", "Mongo DB","Postgres", "TypeORM", "Linux","GraphQL", "REST-APIs", "BlockChain", "Web3","Test","HTML"
     ];
     // let hobbies = vec!["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Camping", "Tanbour"];
     // let languages = vec!["English", "German", "Persian"];
