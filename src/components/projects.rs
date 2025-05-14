@@ -2,7 +2,6 @@
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
-// use std::rc::Rc;
 
 #[function_component(Projects)]
 pub fn projects() -> Html {
@@ -57,7 +56,7 @@ pub fn projects() -> Html {
     ];
 
     let total_projects = projects.len();
-    let cards_per_slide = 3; // Updated to show 5 cards per slide
+    let cards_per_slide = 3;
     let need_slider = total_projects > cards_per_slide;
     
     let total_slides = if need_slider {
@@ -100,11 +99,11 @@ pub fn projects() -> Html {
                 .unwrap()
                 .set_interval_with_callback_and_timeout_and_arguments_0(
                     closure.as_ref().unchecked_ref(),
-                    5000, // Slide every 5 seconds
+                    5000,
                 )
                 .unwrap();
 
-            closure.forget(); // Prevent the closure from being dropped
+            closure.forget();
             move || {
                 window().unwrap().clear_interval_with_handle(interval);
             }
@@ -129,10 +128,9 @@ pub fn projects() -> Html {
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">{ "Personal Projects (FalseFoundation)" }</h2>
-                
+                <p class="section-description">{ "A collection of personal projects and projects built under my company, FalseFoundation Co." }</p>
                 {
                     if !need_slider {
-                        // Standard grid view for 5 or fewer projects
                         html! {
                             <div class="cards">
                                 {
@@ -160,7 +158,6 @@ pub fn projects() -> Html {
                             </div>
                         }
                     } else {
-                        // Carousel view with 5 items per slide
                         html! {
                             <div class="slider-container-wrapper" onmouseenter={on_mouse_enter} onmouseleave={on_mouse_leave}>
                                 <button 
@@ -218,7 +215,6 @@ pub fn projects() -> Html {
                                     disabled={total_slides <= 1}
                                 >{ "→" }</button>
                                 
-                                // Add slide indicators
                                 <div class="slider-indicators">
                                     {
                                         (0..total_slides).map(|i| {

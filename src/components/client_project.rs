@@ -147,7 +147,8 @@ vec![("View Website →", "https://digialpha.agency")],
         <section id="client-projects" class="section">
             <div class="container">
                 <h2 class="section-title">{ "Client Projects" }</h2>
-                
+                <p class="section-description">{ "A selection of freelance, contract-based, and client projects I’ve developed or contributed to, providing custom solutions across various industries." }</p>
+
                 {
                     if !need_slider {
                         // Standard grid view for 5 or fewer projects
