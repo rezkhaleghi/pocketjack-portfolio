@@ -26,7 +26,7 @@ pub fn client_projects() -> Html {
             "./static/falseplayer.jpg",
             "Poudi-Guitar",
             "Engineered a simple guitar/music e-learning platform with robust e-commerce features and protected access codes. Orchestrated backend development for smooth and reliable user interaction, ensuring a user-friendly experience for accessing tutorial videos.",
-            vec![("View Project →", "https://poudiguitar.com")],
+            vec![("View Website →", "https://poudiguitar.com")],
             "Node.Js, MongoDB"
         ),
         (
@@ -49,6 +49,28 @@ pub fn client_projects() -> Html {
             "Wallet Custody is a high-performance backend system designed to interface directly with multiple blockchain nodes (e.g., BTC, ETH, TRX, DOGE). It connects to these nodes to read blocks, monitor transactions in real time, and extract on-chain data critical for exchange and broker operations. Serving as the backbone of trading platforms, Wallet Custody ensures reliable transaction tracking, wallet activity monitoring, and seamless multi-chain support—all built with scalability and security in mind.",
             vec![],
             "Nest.Js, MongoDB, Redis, RabbitMQ, bitcoin-core, web3.js"
+        ),
+        (
+            "./static/falseplayer.jpg",
+            "AIR GAP",
+            "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user.
+the application is packaged as a single executable binary file.",
+            vec![],
+            "Rust, HTML, CSS"
+        ),
+        (
+            "./static/falseplayer.jpg",
+            "DG-CMS",
+            "Built a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
+vec![("View Website →", "https://digialpha.agency")],
+"Node.js, Express.js, MongoDB"
+        ),
+        (
+            "./static/falseplayer.jpg",
+            "tst-sts",
+            "tst a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
+vec![("View Website →", "https://poudiguitar.com")],
+"Node.js, Express.js, MongoDB"
         ),
     ];
 
