@@ -7,7 +7,7 @@ pub fn hero() -> Html {
             <div class="container">
                 <div class="hero">
                     <div class="hero-content">
-                        <h1>{ "Reza \"PocketJack\"" }</h1>
+                        <h1>{ "Reza Khaleghi \"PocketJack\"" }</h1>
                         <p class="subtitle">{ "Software Engineer & Musician" }</p>
                         <p class="hero-description">
                             { "Building innovative software solutions and creating music that resonates. I blend technical expertise with creative expression to craft unique digital experiences." }

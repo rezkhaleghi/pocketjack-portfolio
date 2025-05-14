@@ -13,7 +13,7 @@ pub fn about() -> Html {
 
                     <p style="margin-bottom: 1.5rem;">
                         // { "Hello! I'm Reza, also known as PocketJack. I'm a passionate software engineer and musician with a love for creating both functional applications and expressive music." }
-                        { "Hey, I'm Reza Khaleghi, but you might know me as Pocketjack. Born on July 25, 2000, in Iran, I’m currently living in Turkey." }
+                        { "Hello World, This is Reza Khaleghi AKA Pocketjack. Software engineer, Musician and co-founder of FALSE-FOUNDATION. Born on July 25, 2000, currently base in Turkey." }
                     </p>
                                                             <p>{ "💻" }</p>
 
