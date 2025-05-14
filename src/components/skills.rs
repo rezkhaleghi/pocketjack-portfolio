@@ -8,7 +8,7 @@ pub fn skills() -> Html {
         "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
         "REST-APIs", "BlockChain", "Web3", "Test", "HTML"
     ];
-    let hobbies = vec!["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing","Camping", "Tanbour"];
+    let hobbies = vec!["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing", "Camping", "Tanbour"];
     let languages = vec!["English", "German", "Persian"];
 
     // Function to create a skill card with category-specific icon
@@ -16,7 +16,8 @@ pub fn skills() -> Html {
         let icon_class = match category {
             "hobby" => "skill-icon-hobby",
             "language" => "skill-icon-language",
-            _ => "skill-icon-technical",
+            "technical" => "skill-icon-technical",
+            _ => "skill-icon-technical", // Fallback
         };
         let svg = match category {
             "hobby" => html! {

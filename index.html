@@ -716,12 +716,17 @@
         justify-content: center;
         width: 120px;
         height: 120px;
+        min-width: 120px;
+        max-width: 120px;
+        min-height: 120px;
+        max-height: 120px;
         background: var(--card-bg);
         border-radius: 15px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         transition: var(--transition);
         border: 2px solid transparent;
-        padding: 0.5rem;
+        padding: 0.25rem;
+        overflow: hidden;
       }
 
       .skill-card:hover {
@@ -735,16 +740,16 @@
       }
 
       .skill-icon svg {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         stroke: var(--accent);
       }
 
       .skill-icon-technical svg,
       .skill-icon-hobby svg,
       .skill-icon-language svg {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
       }
 
       .skill-name {
@@ -758,6 +763,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        line-height: 1.2;
       }
 
       @media (max-width: 768px) {
@@ -785,16 +791,28 @@
         .skill-card {
           width: 100px;
           height: 100px;
-          padding: 0.4rem;
+          min-width: 100px;
+          max-width: 100px;
+          min-height: 100px;
+          max-height: 100px;
+          padding: 0.2rem;
         }
 
         .skill-name {
           font-size: 0.8rem;
+          line-height: 1.1;
         }
 
         .skill-icon svg {
-          width: 24px;
-          height: 24px;
+          width: 20px;
+          height: 20px;
+        }
+
+        .skill-icon-technical svg,
+        .skill-icon-hobby svg,
+        .skill-icon-language svg {
+          width: 20px;
+          height: 20px;
         }
       }
 
@@ -956,6 +974,7 @@
         border: none;
         cursor: pointer;
         transition: var(--transition);
+        overflow: hidden;
         opacity: 0.5;
       }
 
