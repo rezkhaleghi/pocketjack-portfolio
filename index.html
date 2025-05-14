@@ -370,6 +370,13 @@
         margin-top: 1rem;
       }
 
+      .platform-link {
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
       .platform-icon {
         width: 24px;
         height: 24px;
@@ -390,6 +397,12 @@
 
       .platform-link.platform-youtube:hover .platform-icon {
         stroke: var(--youtube);
+      }
+
+      .platform-fallback {
+        display: none;
+        font-size: 0.8rem;
+        text-transform: capitalize;
       }
 
       @media (max-width: 768px) {
@@ -776,7 +789,7 @@
 
         .pyramid-column {
           max-width: 100%;
-          margin-top: 0 !important; /* Remove margin-top on mobile */
+          margin-top: 0 !important;
         }
 
         .pyramid-button {
