@@ -1,3 +1,4 @@
+// main.rs
 use yew::prelude::*;
 
 mod components;

@@ -1,7 +1,6 @@
 <!-- index.html
 This is the main HTML file for the PocketJack Portfolio. 
 which contains all the css styles and the main structure of the page. -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,37 +54,6 @@ which contains all the css styles and the main structure of the page. -->
         max-width: 1420px;
         margin: 0 auto;
         padding: 0 1.5rem;
-      }
-
-      header {
-        padding: 2rem 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-      }
-
-      .nav-links a {
-        color: var(--text-secondary);
-        transition: var(--transition);
-      }
-
-      .nav-links a:hover {
-        color: var(--text-primary);
-        text-decoration: none;
       }
 
       .hero {
@@ -460,9 +428,6 @@ which contains all the css styles and the main structure of the page. -->
         align-items: center;
         margin-bottom: 2rem;
         position: relative;
-        opacity: 0;
-        animation: fadeIn 0.5s ease-in forwards;
-        animation-delay: calc(0.2s * var(--index));
       }
 
       .timeline-entry.left {
@@ -481,7 +446,7 @@ which contains all the css styles and the main structure of the page. -->
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1;
+        z-incr: 1;
         transition: var(--transition);
       }
 
@@ -624,17 +589,6 @@ which contains all the css styles and the main structure of the page. -->
       .timeline-link:hover {
         text-decoration: underline;
         transform: translateY(-2px);
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
 
       @media (max-width: 768px) {
@@ -855,44 +809,11 @@ which contains all the css styles and the main structure of the page. -->
 
       /* End Skills Section */
 
-      .client-projects {
-        margin-top: 4rem;
-      }
-
-      .client-card {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .client-logo {
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
-        margin-bottom: 1rem;
-        filter: grayscale(100%) brightness(150%);
-        transition: var(--transition);
-      }
-
-      .client-card:hover .client-logo {
-        filter: grayscale(0%) brightness(100%);
-      }
-
       footer {
         padding: 3rem 0;
         text-align: center;
         border-top: 1px solid var(--border);
         color: var(--text-secondary);
-      }
-
-      .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-      }
-
-      .social-icon {
-        font-size: 1.5rem;
       }
 
       .slider-container-wrapper {
