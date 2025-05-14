@@ -67,10 +67,10 @@ vec![("View Website →", "https://digialpha.agency")],
         ),
         (
             "./static/falseplayer.jpg",
-            "tst-sts",
-            "tst a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
-vec![("View Website →", "https://poudiguitar.com")],
-"Node.js, Express.js, MongoDB"
+            "Crypto Telegram Bot",
+            "Developed a Telegram bot that provides users with real-time on-chain data and whale activity alerts by integrating with Glassnode and Whale Alert APIs. Users can send cryptocurrency symbols (like BTC) to the bot and receive key on-chain metrics—such as transaction volume, exchange flows, and active addresses—along with major whale transfers and market-moving events. This tool offers a fast and accessible way to monitor blockchain trends and large transactions right within Telegram.",
+            vec![],
+"Node.js"
         ),
     ];
 
