@@ -8,7 +8,7 @@ pub fn skills() -> Html {
         "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
         "REST-APIs", "BlockChain", "Web3", "Test", "HTML"
     ];
-    let hobbies = vec!["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Camping", "Tanbour"];
+    let hobbies = vec!["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing","Camping", "Tanbour"];
     let languages = vec!["English", "German", "Persian"];
 
     // Function to create a skill card with category-specific icon
