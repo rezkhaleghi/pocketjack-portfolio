@@ -1,3 +1,4 @@
+// src/components/music.rs
 use yew::prelude::*;
 
 #[derive(Clone, PartialEq)]

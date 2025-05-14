@@ -1,3 +1,4 @@
+// src/components/hero.rs
 use yew::prelude::*;
 
 #[function_component(Hero)]

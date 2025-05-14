@@ -1,4 +1,7 @@
+// src/components/skills.rs
 use yew::prelude::*;
+
+
 
 #[function_component(Skills)]
 pub fn skills() -> Html {

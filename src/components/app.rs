@@ -1,9 +1,11 @@
+// src/components/app.rs
+// app file that contains the main application component
 use yew::prelude::*;
 use crate::components::{
     // header::Header,
     hero::Hero,
     about::About,
-    projects::Projects,
+    my_projects::Projects,
     client_project::ClientProjects,
     music::Music,
     experience::Experience, 

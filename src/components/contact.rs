@@ -1,3 +1,4 @@
+// src/components/contact.rs
 use yew::prelude::*;
 
 #[function_component(Contact)]

@@ -1,3 +1,4 @@
+// src/components/mod.rs
 pub mod about;
 pub mod app;
 pub mod client_project;
@@ -7,5 +8,5 @@ pub mod footer;
 // pub mod header;
 pub mod hero;
 pub mod music;
-pub mod projects;
+pub mod my_projects;
 pub mod skills;

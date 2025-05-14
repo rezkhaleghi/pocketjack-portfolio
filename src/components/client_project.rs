@@ -1,4 +1,4 @@
-// client_projects.rs
+// src/components/client_projects.rs
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;

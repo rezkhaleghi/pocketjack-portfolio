@@ -1,3 +1,4 @@
+// about.rs
 use yew::prelude::*;
 
 #[function_component(About)]
