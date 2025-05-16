@@ -1,6 +1,6 @@
 // src/components/mod.rs
 pub mod about;
-pub mod app;
+// pub mod home;
 pub mod client_project;
 pub mod contact;
 pub mod experience;

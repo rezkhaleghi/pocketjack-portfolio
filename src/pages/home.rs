@@ -1,5 +1,5 @@
-// src/components/app.rs
-// app file that contains the main application component
+// src/pages/home.rs
+// Home page file that contains the main application page component
 use yew::prelude::*;
 use crate::components::{
     // header::Header,
@@ -14,8 +14,8 @@ use crate::components::{
     skills::Skills,
 };
 
-#[function_component(App)]
-pub fn app() -> Html {
+#[function_component(Home)]
+pub fn home() -> Html {
     html! {
         <>
             // <Header />

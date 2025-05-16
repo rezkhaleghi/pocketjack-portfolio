@@ -1,14 +1,14 @@
-// main.rs
 use yew::prelude::*;
 
 mod components;
+mod pages;
 
-use components::app::App;
+use pages::home::Home;
 
 #[function_component(Main)]
 fn main_component() -> Html {
     html! {
-        <App />
+        <Home />
     }
 }
 
