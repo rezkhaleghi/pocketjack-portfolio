@@ -155,7 +155,7 @@ pub fn music() -> Html {
         },
         MusicTrack {
             title: "Moeeney - Liar",
-            youtube_url: "https://www.youtube.com/watch?v=bGGL5BsdGEY",
+            youtube_url: "https://www.youtube.com/embed/bGGL5BsdGEY",
             description: "Produced by PocketJack x Moeeney x Rwayne",
             platforms: vec![
                 PlatformLink {
