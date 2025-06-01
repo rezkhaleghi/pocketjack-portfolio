@@ -154,12 +154,12 @@ pub fn music() -> Html {
             ],
         },
         MusicTrack {
-            title: "Trap Type Beat | FREE",
-            youtube_url: "https://youtube.com/embed/5Wh_iyh2Ino",
-            description: "Produced by PocketJack x NersiBeats",
+            title: "Moeeney - Liar",
+            youtube_url: "https://www.youtube.com/watch?v=bGGL5BsdGEY",
+            description: "Produced by PocketJack x Moeeney x Rwayne",
             platforms: vec![
                 PlatformLink {
-                    url: "https://www.youtube.com/watch?v=5Wh_iyh2Ino",
+                    url: "https://www.youtube.com/watch?v=bGGL5BsdGEY",
                     platform: "youtube",
                     title: "Listen on YouTube",
                     icon: r#"<path d="M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z"></path><path d="M10 8l6 4-6 4V8z"></path>"#,

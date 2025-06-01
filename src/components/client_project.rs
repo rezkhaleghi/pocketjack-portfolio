@@ -9,7 +9,7 @@ pub fn client_projects() -> Html {
     let is_paused = use_state(|| false);
     let projects = vec![
         (
-            "./static/fairfly.jpg",
+            "./static/tmar.png",
             "Tmar-Travel",
             "Developed TMAR Travel, a ride-hailing platform for eco-tourism and off-road trips, where users can request a ride by selecting pickup, destination, and vehicle type. Architected the entire backend from scratch using a microservices approach, ensuring scalability, real-time processing, and clean service communication. Led a small agile team, guiding development, design patterns, and on-time delivery.",
             vec![("View Website →", "https://tmar.app")],
@@ -23,7 +23,7 @@ pub fn client_projects() -> Html {
             "Node.Js, MongoDB"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/poudi.png",
             "Poudi-Guitar",
             "Engineered a simple guitar/music e-learning platform with robust e-commerce features and protected access codes. Orchestrated backend development for smooth and reliable user interaction, ensuring a user-friendly experience for accessing tutorial videos.",
             vec![("View Website →", "https://poudiguitar.com")],
