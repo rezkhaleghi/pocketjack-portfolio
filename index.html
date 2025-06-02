@@ -1,6 +1,3 @@
-<!-- index.html
-This is the main HTML file for the PocketJack Portfolio. 
-which contains all the css styles and the main structure of the page. -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -303,6 +300,11 @@ which contains all the css styles and the main structure of the page. -->
         border-radius: 10px;
         padding: 1.5rem;
         transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
+        max-height: 500px;
+        overflow-y: auto;
       }
 
       .card:hover {
@@ -319,12 +321,14 @@ which contains all the css styles and the main structure of the page. -->
       .card-content {
         color: var(--text-secondary);
         margin-bottom: 1rem;
+        flex-grow: 1;
       }
 
       .card-link {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
+        margin-bottom: 0.5rem;
       }
 
       .project-image {
@@ -692,7 +696,7 @@ which contains all the css styles and the main structure of the page. -->
       .skill-row {
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 1rem;
         width: 100%;
       }
 
@@ -701,18 +705,18 @@ which contains all the css styles and the main structure of the page. -->
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 120px;
-        height: 120px;
-        min-width: 120px;
-        max-width: 120px;
-        min-height: 120px;
-        max-height: 120px;
+        width: 110px;
+        height: 110px;
+        min-width: 110px;
+        max-width: 110px;
+        min-height: 110px;
+        max-height: 110px;
         background: var(--card-bg);
         border-radius: 15px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         transition: var(--transition);
         border: 2px solid transparent;
-        padding: 0.25rem;
+        padding: 0.4rem;
         overflow: hidden;
       }
 
@@ -723,20 +727,20 @@ which contains all the css styles and the main structure of the page. -->
       }
 
       .skill-icon {
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.5rem;
       }
 
       .skill-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         stroke: var(--accent);
       }
 
       .skill-icon-technical svg,
       .skill-icon-hobby svg,
       .skill-icon-language svg {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
       }
 
       .skill-name {
@@ -754,14 +758,14 @@ which contains all the css styles and the main structure of the page. -->
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
-        line-height: 1.1;
+        line-height: 1.2;
       }
 
       @media (max-width: 768px) {
         .pyramid-container {
           flex-direction: column;
           align-items: center;
-          gap: 3rem;
+          gap: 2rem;
         }
 
         .pyramid-column {
@@ -772,13 +776,48 @@ which contains all the css styles and the main structure of the page. -->
         .pyramid-button {
           font-size: 1.2rem;
           padding: 0.6rem 1.2rem;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
         }
 
         .section-title {
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
         }
 
+        .skill-card {
+          width: 110px;
+          height: 110px;
+          min-width: 110px;
+          max-width: 110px;
+          min-height: 110px;
+          max-height: 110px;
+          padding: 0.4rem;
+        }
+
+        .skill-name {
+          font-size: 0.85rem;
+          line-height: 1.2;
+        }
+
+        .skill-icon svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .skill-icon-technical svg,
+        .skill-icon-hobby svg,
+        .skill-icon-language svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .skill-row {
+          gap: 0.8rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
         .skill-card {
           width: 100px;
           height: 100px;
@@ -786,24 +825,15 @@ which contains all the css styles and the main structure of the page. -->
           max-width: 100px;
           min-height: 100px;
           max-height: 100px;
-          padding: 0.2rem;
         }
 
         .skill-name {
-          font-size: 0.75rem;
-          line-height: 1.1;
+          font-size: 0.8rem;
         }
 
         .skill-icon svg {
-          width: 18px;
-          height: 18px;
-        }
-
-        .skill-icon-technical svg,
-        .skill-icon-hobby svg,
-        .skill-icon-language svg {
-          width: 18px;
-          height: 18px;
+          width: 20px;
+          height: 20px;
         }
       }
 
@@ -837,23 +867,16 @@ which contains all the css styles and the main structure of the page. -->
 
       .slider-page {
         min-width: 100%;
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
         flex-shrink: 0;
-      }
-
-      .slider-page:has(> .slider-card:nth-child(3):not(:last-child)) {
-        justify-content: space-between;
-      }
-
-      .slider-page:has(> .slider-card:nth-child(2):last-child) {
-        justify-content: center;
+        padding: 0 1rem;
       }
 
       .slider-card {
         flex: 1;
-        min-width: 0;
+        min-width: 300px;
         display: flex;
         flex-direction: column;
       }
@@ -862,14 +885,16 @@ which contains all the css styles and the main structure of the page. -->
         height: 100%;
         display: flex;
         flex-direction: column;
-        width: calc(33.33% - 1.33rem);
+        width: 100%;
         max-width: 400px;
         min-height: 400px;
+        max-height: 500px;
         border: 1px solid var(--border);
         background-color: var(--card-bg);
         border-radius: 10px;
         padding: 1.5rem;
         transition: var(--transition);
+        overflow-y: auto;
       }
 
       .slider-card .card:hover {
@@ -945,22 +970,23 @@ which contains all the css styles and the main structure of the page. -->
         transform: scale(1.2);
       }
 
-      @media (max-width: 1200px) {
-        .slider-card .card {
-          width: calc(25% - 1.5rem);
-        }
-      }
-
       @media (max-width: 992px) {
         .slider-page {
-          flex-direction: column;
+          grid-template-columns: 1fr;
           align-items: center;
         }
 
         .slider-card {
           width: 100%;
           max-width: 400px;
-          margin-bottom: 20px;
+          margin-bottom: 1.5rem;
+        }
+
+        .slider-card .card {
+          width: 100%;
+          max-width: 400px;
+          min-height: 360px;
+          padding: 1.2rem;
         }
 
         .slider-container-wrapper {
@@ -986,25 +1012,66 @@ which contains all the css styles and the main structure of the page. -->
         .slider-next {
           right: 5px;
         }
+
+        .slider-page {
+          gap: 1rem;
+        }
+
+        .slider-card .card {
+          min-height: 340px;
+          padding: 1rem;
+        }
+
+        .project-image {
+          height: 160px;
+        }
+
+        .card-title {
+          font-size: 1.1rem;
+        }
+
+        .card-content {
+          font-size: 0.95rem;
+        }
       }
 
-      .slider-card .card {
-        width: 100%;
-        max-width: 400px;
-        min-height: 400px;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid var(--border);
-        background-color: var(--card-bg);
-        border-radius: 10px;
-        padding: 1.5rem;
-        transition: var(--transition);
-      }
+      @media (max-width: 480px) {
+        .slider-container-wrapper {
+          padding: 0 20px;
+        }
 
-      .slider-card .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        border-color: var(--accent);
+        .slider-card .card {
+          min-height: 320px;
+          padding: 0.8rem;
+        }
+
+        .project-image {
+          height: 140px;
+        }
+
+        .card-title {
+          font-size: 1rem;
+        }
+
+        .card-content {
+          font-size: 0.9rem;
+        }
+
+        .slider-nav {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+        }
+
+        .slider-indicators {
+          gap: 8px;
+          margin-top: 15px;
+        }
+
+        .slider-indicator {
+          width: 10px;
+          height: 10px;
+        }
       }
     </style>
   </head>
