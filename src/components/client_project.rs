@@ -1,4 +1,3 @@
-// src/components/client_projects.rs
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
@@ -7,6 +6,12 @@ use web_sys::window;
 pub fn client_projects() -> Html {
     let current_slide = use_state(|| 0);
     let is_paused = use_state(|| false);
+    let window_width = use_state(|| {
+        window()
+            .map(|w| w.inner_width().unwrap().as_f64().unwrap())
+            .unwrap_or(0.0)
+    });
+
     let projects = vec![
         (
             "./static/tmar.png",
@@ -53,8 +58,7 @@ pub fn client_projects() -> Html {
         (
             "./static/test.jpg",
             "AIR GAP",
-            "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user.
-the application is packaged as a single executable binary file.",
+            "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user. The application is packaged as a single executable binary file.",
             vec![],
             "Rust, HTML, CSS"
         ),
@@ -62,34 +66,62 @@ the application is packaged as a single executable binary file.",
             "./static/digi.png",
             "DG-CMS",
             "Built a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
-vec![("View Website →", "https://digialpha.agency")],
-"Node.js, Express.js, MongoDB"
+            vec![("View Website →", "https://digialpha.agency")],
+            "Node.js, Express.js, MongoDB"
         ),
         (
             "./static/test.jpg",
             "Crypto Telegram Bot",
             "Developed a Telegram bot that provides users with real-time on-chain data and whale activity alerts by integrating with Glassnode and Whale Alert APIs. Users can send cryptocurrency symbols (like BTC) to the bot and receive key on-chain metrics—such as transaction volume, exchange flows, and active addresses—along with major whale transfers and market-moving events. This tool offers a fast and accessible way to monitor blockchain trends and large transactions right within Telegram.",
             vec![],
-"Node.js"
+            "Node.js"
         ),
     ];
 
     let total_projects = projects.len();
-    let cards_per_slide = 3; // Updated to show 5 cards per slide
+    let cards_per_slide = if *window_width <= 768.0 { 1 } else { 3 };
     let need_slider = total_projects > cards_per_slide;
-    
+
     let total_slides = if need_slider {
-        (total_projects as f32 / cards_per_slide as f32).ceil() as usize
+        (total_projects as f64 / cards_per_slide as f64).ceil() as usize
     } else {
         1
     };
-    
+
     let current = *current_slide;
+
+    let update_window_width = {
+        let window_width = window_width.clone();
+        Callback::from(move |_| {
+            if let Some(w) = window() {
+                window_width.set(w.inner_width().unwrap().as_f64().unwrap());
+            }
+        })
+    };
+
+    {
+        use_effect(move || {
+            let listener = Closure::wrap(Box::new({
+                let update_window_width = update_window_width.clone();
+                move || update_window_width.emit(())
+            }) as Box<dyn Fn()>);
+            if let Some(w) = window() {
+                w.add_event_listener_with_callback("resize", listener.as_ref().unchecked_ref())
+                    .unwrap();
+            }
+            move || {
+                if let Some(w) = window() {
+                    w.remove_event_listener_with_callback("resize", listener.as_ref().unchecked_ref())
+                        .unwrap();
+                }
+            }
+        });
+    }
 
     let next_slide = {
         let current_slide = current_slide.clone();
         Callback::from(move |_| {
-            let next = (current + 1) % total_slides;
+            let next = (*current_slide + 1) % total_slides;
             current_slide.set(next);
         })
     };
@@ -97,7 +129,11 @@ vec![("View Website →", "https://digialpha.agency")],
     let prev_slide = {
         let current_slide = current_slide.clone();
         Callback::from(move |_| {
-            let prev = (current + total_slides - 1) % total_slides;
+            let prev = if *current_slide == 0 {
+                total_slides - 1
+            } else {
+                *current_slide - 1
+            };
             current_slide.set(prev);
         })
     };
@@ -106,23 +142,20 @@ vec![("View Website →", "https://digialpha.agency")],
     {
         let current_slide = current_slide.clone();
         let is_paused = is_paused.clone();
-        use_effect_with((), move |_| {
+        use_effect(move || {
             let closure = Closure::wrap(Box::new(move || {
                 if !*is_paused {
                     let next = (*current_slide + 1) % total_slides;
                     current_slide.set(next);
                 }
             }) as Box<dyn Fn()>);
-
             let interval = window()
                 .unwrap()
                 .set_interval_with_callback_and_timeout_and_arguments_0(
                     closure.as_ref().unchecked_ref(),
-                    5000, // Slide every 5 seconds
+                    5000,
                 )
                 .unwrap();
-
-            closure.forget(); // Prevent the closure from being dropped
             move || {
                 window().unwrap().clear_interval_with_handle(interval);
             }
@@ -131,27 +164,23 @@ vec![("View Website →", "https://digialpha.agency")],
 
     let on_mouse_enter = {
         let is_paused = is_paused.clone();
-        Callback::from(move |_| {
-            is_paused.set(true);
-        })
+        Callback::from(move |_| is_paused.set(true))
     };
 
     let on_mouse_leave = {
         let is_paused = is_paused.clone();
-        Callback::from(move |_| {
-            is_paused.set(false);
-        })
+        Callback::from(move |_| is_paused.set(false))
     };
+
+    let transform_style = format!("transform: translateX(-{}%)", current * 100);
 
     html! {
         <section id="client-projects" class="section">
             <div class="container">
                 <h2 class="section-title">{ "Client Projects" }</h2>
                 <p class="section-description">{ "A selection of freelance, contract-based, and client projects I’ve developed or contributed to, providing custom solutions across various industries." }</p>
-
                 {
                     if !need_slider {
-                        // Standard grid view for 5 or fewer projects
                         html! {
                             <div class="cards">
                                 {
@@ -179,7 +208,6 @@ vec![("View Website →", "https://digialpha.agency")],
                             </div>
                         }
                     } else {
-                        // Carousel view with 5 items per slide
                         html! {
                             <div class="slider-container-wrapper" onmouseenter={on_mouse_enter} onmouseleave={on_mouse_leave}>
                                 <button 
@@ -190,17 +218,13 @@ vec![("View Website →", "https://digialpha.agency")],
                                 >{ "←" }</button>
                                 
                                 <div class="projects-slider">
-                                    <div class="slider-track" style={format!("transform: translateX({}%)", -100 * (current as isize))}>
+                                    <div class="slider-track" style={transform_style}>
                                         {
-                                            (0..total_slides).map(|slide_index| {
-                                                let start_idx = slide_index * cards_per_slide;
-                                                let end_idx = (start_idx + cards_per_slide).min(total_projects);
-                                                let slide_projects = &projects[start_idx..end_idx];
-                                                
+                                            projects.chunks(cards_per_slide).enumerate().map(|(slide_index, chunk)| {
                                                 html! {
-                                                    <div class="slider-page">
+                                                    <div class="slider-page" key={slide_index}>
                                                         {
-                                                            slide_projects.iter().map(|(img, title, desc, links, tech)| {
+                                                            chunk.iter().map(|(img, title, desc, links, tech)| {
                                                                 html! {
                                                                     <div class="slider-card">
                                                                         <div class="card">
@@ -237,7 +261,6 @@ vec![("View Website →", "https://digialpha.agency")],
                                     disabled={total_slides <= 1}
                                 >{ "→" }</button>
                                 
-                                // Add slide indicators
                                 <div class="slider-indicators">
                                     {
                                         (0..total_slides).map(|i| {

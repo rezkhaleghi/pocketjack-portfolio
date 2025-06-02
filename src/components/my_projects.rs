@@ -1,4 +1,3 @@
-// src/components/my_projects.rs
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
@@ -7,6 +6,12 @@ use web_sys::window;
 pub fn projects() -> Html {
     let current_slide = use_state(|| 0);
     let is_paused = use_state(|| false);
+    let window_width = use_state(|| {
+        window()
+            .map(|w| w.inner_width().unwrap().as_f64().unwrap())
+            .unwrap_or(0.0)
+    });
+
     let projects = vec![
         (
             "./static/fairfly.jpg",
@@ -56,21 +61,49 @@ pub fn projects() -> Html {
     ];
 
     let total_projects = projects.len();
-    let cards_per_slide = 3;
+    let cards_per_slide = if *window_width <= 768.0 { 1 } else { 3 };
     let need_slider = total_projects > cards_per_slide;
-    
+
     let total_slides = if need_slider {
-        (total_projects as f32 / cards_per_slide as f32).ceil() as usize
+        (total_projects as f64 / cards_per_slide as f64).ceil() as usize
     } else {
         1
     };
-    
+
     let current = *current_slide;
+
+    let update_window_width = {
+        let window_width = window_width.clone();
+        Callback::from(move |_| {
+            if let Some(w) = window() {
+                window_width.set(w.inner_width().unwrap().as_f64().unwrap());
+            }
+        })
+    };
+
+    {
+        use_effect(move || {
+            let listener = Closure::wrap(Box::new({
+                let update_window_width = update_window_width.clone();
+                move || update_window_width.emit(())
+            }) as Box<dyn Fn()>);
+            if let Some(w) = window() {
+                w.add_event_listener_with_callback("resize", listener.as_ref().unchecked_ref())
+                    .unwrap();
+            }
+            move || {
+                if let Some(w) = window() {
+                    w.remove_event_listener_with_callback("resize", listener.as_ref().unchecked_ref())
+                        .unwrap();
+                }
+            }
+        });
+    }
 
     let next_slide = {
         let current_slide = current_slide.clone();
         Callback::from(move |_| {
-            let next = (current + 1) % total_slides;
+            let next = (*current_slide + 1) % total_slides;
             current_slide.set(next);
         })
     };
@@ -78,7 +111,11 @@ pub fn projects() -> Html {
     let prev_slide = {
         let current_slide = current_slide.clone();
         Callback::from(move |_| {
-            let prev = (current + total_slides - 1) % total_slides;
+            let prev = if *current_slide == 0 {
+                total_slides - 1
+            } else {
+                *current_slide - 1
+            };
             current_slide.set(prev);
         })
     };
@@ -87,14 +124,13 @@ pub fn projects() -> Html {
     {
         let current_slide = current_slide.clone();
         let is_paused = is_paused.clone();
-        use_effect_with((), move |_| {
+        use_effect(move || {
             let closure = Closure::wrap(Box::new(move || {
                 if !*is_paused {
                     let next = (*current_slide + 1) % total_slides;
                     current_slide.set(next);
                 }
             }) as Box<dyn Fn()>);
-
             let interval = window()
                 .unwrap()
                 .set_interval_with_callback_and_timeout_and_arguments_0(
@@ -102,8 +138,6 @@ pub fn projects() -> Html {
                     5000,
                 )
                 .unwrap();
-
-            closure.forget();
             move || {
                 window().unwrap().clear_interval_with_handle(interval);
             }
@@ -112,17 +146,15 @@ pub fn projects() -> Html {
 
     let on_mouse_enter = {
         let is_paused = is_paused.clone();
-        Callback::from(move |_| {
-            is_paused.set(true);
-        })
+        Callback::from(move |_| is_paused.set(true))
     };
 
     let on_mouse_leave = {
         let is_paused = is_paused.clone();
-        Callback::from(move |_| {
-            is_paused.set(false);
-        })
+        Callback::from(move |_| is_paused.set(false))
     };
+
+    let transform_style = format!("transform: translateX(-{}%)", current * 100);
 
     html! {
         <section id="projects" class="section">
@@ -168,17 +200,13 @@ pub fn projects() -> Html {
                                 >{ "←" }</button>
                                 
                                 <div class="projects-slider">
-                                    <div class="slider-track" style={format!("transform: translateX({}%)", -100 * (current as isize))}>
+                                    <div class="slider-track" style={transform_style}>
                                         {
-                                            (0..total_slides).map(|slide_index| {
-                                                let start_idx = slide_index * cards_per_slide;
-                                                let end_idx = (start_idx + cards_per_slide).min(total_projects);
-                                                let slide_projects = &projects[start_idx..end_idx];
-                                                
+                                            projects.chunks(cards_per_slide).enumerate().map(|(slide_index, chunk)| {
                                                 html! {
-                                                    <div class="slider-page">
+                                                    <div class="slider-page" key={slide_index}>
                                                         {
-                                                            slide_projects.iter().map(|(img, title, desc, links, tech)| {
+                                                            chunk.iter().map(|(img, title, desc, links, tech)| {
                                                                 html! {
                                                                     <div class="slider-card">
                                                                         <div class="card">
