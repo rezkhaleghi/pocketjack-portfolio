@@ -29,7 +29,6 @@ pocketjack-portfolio/
 │   ├── main.rs
 │   ├── components/
 │   │   ├── about.rs
-│   │   ├── app.rs
 │   │   ├── client_project.rs
 │   │   ├── experience.rs
 │   │   ├── footer.rs
@@ -40,6 +39,9 @@ pocketjack-portfolio/
 │   │   ├── my_projects.rs
 │   │   ├── skills.rs
 │   │   └── contact.rs
+|   ├── pages/
+│   │   ├── home.rs
+│   │   ├── mod.rs
 ├── static/
 ```
 
