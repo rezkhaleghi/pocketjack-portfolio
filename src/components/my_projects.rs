@@ -23,7 +23,7 @@ pub fn projects() -> Html {
             "TypeScript, Nest.js, MongoDB"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/test.jpg",
             "False-Player",
             "False Player is a web platform and Telegram mini app that lets users search for movies, music, videos, and books from across the internet. Stream movies and music online directly—fast, free, and without the hassle.",
             vec![

@@ -16,7 +16,7 @@ pub fn client_projects() -> Html {
             "Node.Js, Nest.Js, MSSQL, MongoDB"
         ),
         (
-            "./static/jorcolab.jpg",
+            "./static/test.jpg",
             "UNFXB-Explorer",
             "Developed a multi-chain blockchain explorer enabling users to search transactions, wallets, hashes, and blocks across various blockchain networks including Bitcoin, Ethereum, Tron, Bitcoin Cash, Dogecoin, and Binance Coin (BNB). Leveraged blockchain APIs and technologies to create a user-friendly interface for navigating and exploring blockchain data across multiple networks.",
             vec![("View Website →", "https://explorer.unfxbit.com")],
@@ -30,28 +30,28 @@ pub fn client_projects() -> Html {
             "Node.Js, MongoDB"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/test.jpg",
             "Knowledge Management System(KMS)",
             "I successfully developed the backend of a Knowledge Management System (KMS) that functions as a social network for knowledge sharing and collaboration, using the KeystoneJS framework, a simple and flexible Node.js framework. This project involved creating a robust and scalable platform that enables users to connect, share insights, and manage knowledge assets within an organization.",
             vec![],
             "KeystoneJS, PostgreSQL, GraphQL, Node.Js"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/test.jpg",
             "VVC Exchange",
             "Constructed a decentralized cryptocurrency exchange platform on the Stellar blockchain, enabling global fiat/crypto transfers and offering a versatile payment gateway.",
             vec![],
             "Node.Js, Stellar Blockchain, MongoDB"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/test.jpg",
             "Wallet Custody",
             "Wallet Custody is a high-performance backend system designed to interface directly with multiple blockchain nodes (e.g., BTC, ETH, TRX, DOGE). It connects to these nodes to read blocks, monitor transactions in real time, and extract on-chain data critical for exchange and broker operations. Serving as the backbone of trading platforms, Wallet Custody ensures reliable transaction tracking, wallet activity monitoring, and seamless multi-chain support—all built with scalability and security in mind.",
             vec![],
             "Nest.Js, MongoDB, Redis, RabbitMQ, bitcoin-core, web3.js"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/test.jpg",
             "AIR GAP",
             "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user.
 the application is packaged as a single executable binary file.",
@@ -59,14 +59,14 @@ the application is packaged as a single executable binary file.",
             "Rust, HTML, CSS"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/digi.png",
             "DG-CMS",
             "Built a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
 vec![("View Website →", "https://digialpha.agency")],
 "Node.js, Express.js, MongoDB"
         ),
         (
-            "./static/falseplayer.jpg",
+            "./static/test.jpg",
             "Crypto Telegram Bot",
             "Developed a Telegram bot that provides users with real-time on-chain data and whale activity alerts by integrating with Glassnode and Whale Alert APIs. Users can send cryptocurrency symbols (like BTC) to the bot and receive key on-chain metrics—such as transaction volume, exchange flows, and active addresses—along with major whale transfers and market-moving events. This tool offers a fast and accessible way to monitor blockchain trends and large transactions right within Telegram.",
             vec![],
