@@ -56,7 +56,7 @@ pub fn client_projects() -> Html {
             "Nest.Js, MongoDB, Redis, RabbitMQ, bitcoin-core, web3.js"
         ),
         (
-            "./static/test.jpg",
+            "./static/airgap.png",
             "AIR GAP",
             "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user. The application is packaged as a single executable binary file.",
             vec![],

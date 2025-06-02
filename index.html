@@ -304,7 +304,7 @@
         flex-direction: column;
         min-height: 400px;
         max-height: 500px;
-        overflow-y: auto;
+        border: 1px solid var(--border);
       }
 
       .card:hover {
@@ -322,6 +322,22 @@
         color: var(--text-secondary);
         margin-bottom: 1rem;
         flex-grow: 1;
+        max-height: 200px; /* Limit description height */
+        overflow-y: auto; /* Scroll for long descriptions */
+        padding-right: 10px; /* Prevent scrollbar overlap */
+      }
+
+      .card-content::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .card-content::-webkit-scrollbar-track {
+        background: var(--card-bg);
+      }
+
+      .card-content::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 3px;
       }
 
       .card-link {
@@ -894,7 +910,6 @@
         border-radius: 10px;
         padding: 1.5rem;
         transition: var(--transition);
-        overflow-y: auto;
       }
 
       .slider-card .card:hover {
@@ -1011,6 +1026,7 @@
 
         .card-content {
           font-size: 0.95rem;
+          max-height: 150px; /* Tighter limit for mobile */
         }
 
         .slider-nav {
@@ -1048,6 +1064,7 @@
 
         .card-content {
           font-size: 0.9rem;
+          max-height: 140px; /* Even tighter for smaller screens */
         }
 
         .slider-nav {
