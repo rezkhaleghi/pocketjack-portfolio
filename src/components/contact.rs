@@ -14,15 +14,15 @@ pub fn contact() -> Html {
                     <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
                         <div>
                             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">{ "Email" }</h3>
-                            <a href="mailto:your.email@example.com">{ "your.email@example.com" }</a>
+                            <a href="mailto:rezaxkhaleghi@gmail.com">{ "rezaxkhaleghi@gmail.com" }</a>
                         </div>
                         <div>
                             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">{ "GitHub" }</h3>
-                            <a href="https://github.com/yourusername" target="_blank">{ "github.com/yourusername" }</a>
+                            <a href="https://github.com/rezkhaleghi" target="_blank">{ "github.com/rezkhaleghi" }</a>
                         </div>
                         <div>
                             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">{ "LinkedIn" }</h3>
-                            <a href="https://linkedin.com/in/yourusername" target="_blank">{ "linkedin.com/in/yourusername" }</a>
+                            <a href="https://linkedin.com/in/rezaxkhaleghi" target="_blank">{ "linkedin.com/in/rezaxkhaleghi" }</a>
                         </div>
                     </div>
                 </div>

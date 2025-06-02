@@ -12,7 +12,7 @@ pub fn projects() -> Html {
             "./static/fairfly.jpg",
             "Fair-Fly",
             "Fair Fly is a web-based app that helps users find and compare affordable flight deals across multiple providers. Its core feature is a smart price alert system that notifies users when fares drop to their preferred price.",
-            vec![("View Website →", "https://fair-fly.site")],
+            vec![("View Website →", "https://fairfly.site")],
             "Rust, WebAssembly, actix-web, Yew, MongoDB"
         ),
         (
