@@ -1,4 +1,4 @@
-use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, MusicData, MusicTrack, Project, ProjectLink, SkillsData, SocialLink, SvgData};
+use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, MusicData, MusicTrack, Project, ProjectLink, SocialLink, SvgData};
 
 pub const HERO_DATA: HeroData = HeroData {
     name: "Reza Khaleghi \"PocketJack\"",
@@ -10,8 +10,8 @@ pub const HERO_DATA: HeroData = HeroData {
             url: "https://linkedin.com/in/rezaxkhaleghi",
             title: "LinkedIn",
             svg: SvgData {
-                width: 24,
-                height: 24,
+                width: "24",
+                height: "24",
                 view_box: "0 0 24 24",
                 paths: &[
                     "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
@@ -25,8 +25,8 @@ pub const HERO_DATA: HeroData = HeroData {
             url: "https://github.com/rezkhaleghi",
             title: "GitHub",
             svg: SvgData {
-                width: 24,
-                height: 24,
+                width: "24",
+                height: "24",
                 view_box: "0 0 24 24",
                 paths: &[
                     "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22",
@@ -38,8 +38,8 @@ pub const HERO_DATA: HeroData = HeroData {
             url: "https://youtube.com/@pocketJack1",
             title: "YouTube",
             svg: SvgData {
-                width: 24,
-                height: 24,
+                width: "24",
+                height: "24",
                 view_box: "0 0 24 24",
                 paths: &[
                     "M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z",
@@ -52,8 +52,8 @@ pub const HERO_DATA: HeroData = HeroData {
             url: "https://instagram.com/pocketjack1",
             title: "Instagram",
             svg: SvgData {
-                width: 24,
-                height: 24,
+                width: "24",
+                height: "24",
                 view_box: "0 0 24 24",
                 paths: &[
                     "M2 2h20v20H2z",
@@ -67,8 +67,8 @@ pub const HERO_DATA: HeroData = HeroData {
             url: "https://patreon.com/pocketjack",
             title: "Patreon",
             svg: SvgData {
-                width: 24,
-                height: 24,
+                width: "24",
+                height: "24",
                 view_box: "0 0 24 24",
                 paths: &[
                     "M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z",
@@ -81,8 +81,8 @@ pub const HERO_DATA: HeroData = HeroData {
             url: "https://soundcloud.com/pocketjack",
             title: "SoundCloud",
             svg: SvgData {
-                width: 24,
-                height: 24,
+                width: "24",
+                height: "24",
                 view_box: "0 0 24 24",
                 paths: &[
                     "M2 12h1",
@@ -361,8 +361,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://soundcloud.com/farigo-music/dark-alley",
                     title: "Listen on SoundCloud",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M3 9v6h4l5 5V4L7 9H3z",
@@ -376,8 +376,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://open.spotify.com/track/0bs3pzYBAjC03KrvkSREiu?si=c858fdd71ca54790",
                     title: "Listen on Spotify",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z",
@@ -392,8 +392,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=yWnvb65k6_E",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -413,8 +413,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://soundcloud.com/farigo-music/perfection",
                     title: "Listen on SoundCloud",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M3 9v6h4l5 5V4L7 9H3z",
@@ -428,8 +428,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://open.spotify.com/track/6hSHnuPlqLhkpGCbpYvVXn?si=1a002fbf245e411a",
                     title: "Listen on Spotify",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z",
@@ -444,8 +444,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=Iov95aS-O7U",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -465,8 +465,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://soundcloud.com/farigo-music/freestyle",
                     title: "Listen on SoundCloud",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M3 9v6h4l5 5V4L7 9H3z",
@@ -480,8 +480,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://open.spotify.com/album/5hvV1cVf9EkJu9tvFHxE5L?si=1ysLkteqSpGv322yCOzctw",
                     title: "Listen on Spotify",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z",
@@ -496,8 +496,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=7dofpxeOHCw",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -517,8 +517,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://soundcloud.com/pocketjack/blue",
                     title: "Listen on SoundCloud",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M3 9v6h4l5 5V4L7 9H3z",
@@ -532,8 +532,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=G6mtWxIcYHA",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -553,8 +553,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=FoUr4ZgbvQo",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -574,8 +574,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=oS6rGsPtze4",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -595,8 +595,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=5Wh_iyh2Ino",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -616,8 +616,8 @@ pub const MUSIC_DATA: MusicData = MusicData {
                     url: "https://www.youtube.com/watch?v=bGGL5BsdGEY",
                     title: "Listen on YouTube",
                     svg: SvgData {
-                        width: 24,
-                        height: 24,
+                        width: "24",
+                        height: "24",
                         view_box: "0 0 24 24",
                         paths: &[
                             "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
@@ -632,44 +632,44 @@ pub const MUSIC_DATA: MusicData = MusicData {
 
 
 
-pub const SKILLS_DATA: SkillsData = SkillsData {
-    technical_skills: &[
-        "Rust", "WASM", "JavaScript", "TypeScript", "Nest.Js", "SpringBoot", "Git", "Docker",
-        "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
-        "REST-APIs", "BlockChain", "Web3", "Test", "HTML",
-    ],
-    hobbies: &["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing", "Camping", "Tanbour"],
-    languages: &["English", "German", "Persian"],
-    technical_icon: SvgData {
-        width: 20,
-        height: 20,
-        view_box: "0 0 24 24",
-        paths: &[
-            "M16 18l6-6-6-6",
-            "M8 6l-6 6 6 6",
-        ],
-    },
-    hobby_icon: SvgData {
-        width: 20,
-        height: 20,
-        view_box: "0 0 24 24",
-        paths: &[
-            "M2 22h20",
-            "M6 2v16a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V8",
-            "M20 2v16a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V8",
-            "M10 6h4",
-            "M8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
-            "M16 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
-        ],
-    },
-    language_icon: SvgData {
-        width: 20,
-        height: 20,
-        view_box: "0 0 24 24",
-        paths: &[
-            "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
-            "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
-            "M2 12h20",
-        ],
-    },
-};
+// pub const SKILLS_DATA: SkillsData = SkillsData {
+//     technical_skills: &[
+//         "Rust", "WASM", "JavaScript", "TypeScript", "Nest.Js", "SpringBoot", "Git", "Docker",
+//         "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
+//         "REST-APIs", "BlockChain", "Web3", "Test", "HTML",
+//     ],
+//     hobbies: &["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing", "Camping", "Tanbour"],
+//     languages: &["English", "German", "Persian"],
+//     technical_icon: SvgData {
+//         width: "20",
+//         height: "20",
+//         view_box: "0 0 24 24",
+//         paths: &[
+//             "M16 18l6-6-6-6",
+//             "M8 6l-6 6 6 6",
+//         ],
+//     },
+//     hobby_icon: SvgData {
+//         width: "20",
+//         height: "20",
+//         view_box: "0 0 24 24",
+//         paths: &[
+//             "M2 22h20",
+//             "M6 2v16a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V8",
+//             "M20 2v16a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V8",
+//             "M10 6h4",
+//             "M8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
+//             "M16 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
+//         ],
+//     },
+//     language_icon: SvgData {
+//         width: "20",
+//         height: "20",
+//         view_box: "0 0 24 24",
+//         paths: &[
+//             "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+//             "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+//             "M2 12h20",
+//         ],
+//     },
+// };

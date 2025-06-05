@@ -14,13 +14,6 @@ pub struct SocialLink<'a> {
     pub svg: SvgData<'a>,
 }
 
-#[derive(Debug, Clone)]
-pub struct SvgData<'a> {
-    pub width: i32,
-    pub height: i32,
-    pub view_box: &'a str,
-    pub paths: &'a [&'a str],
-}
 
 #[derive(Debug, Clone)]
 pub struct AboutData<'a> {
@@ -107,11 +100,19 @@ pub struct MusicTrack<'a> {
 
 
 #[derive(Debug, Clone)]
-pub struct SkillsData<'a> {
-    pub technical_skills: &'a [&'a str],
-    pub hobbies: &'a [&'a str],
-    pub languages: &'a [&'a str],
-    pub technical_icon: SvgData<'a>,
-    pub hobby_icon: SvgData<'a>,
-    pub language_icon: SvgData<'a>,
+pub struct SvgData<'a> {
+    pub width: &'a str,
+    pub height: &'a str,
+    pub view_box: &'a str,
+    pub paths: &'a [&'a str],
 }
+
+// #[derive(Debug, Clone)]
+// pub struct SkillsData<'a> {
+//     pub technical_skills: &'a [&'a str],
+//     pub hobbies: &'a [&'a str],
+//     pub languages: &'a [&'a str],
+//     pub technical_icon: SvgData<'a>,
+//     pub hobby_icon: SvgData<'a>,
+//     pub language_icon: SvgData<'a>,
+// }
