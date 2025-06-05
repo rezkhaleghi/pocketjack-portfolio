@@ -1,4 +1,4 @@
-use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, Project, ProjectLink, SocialLink, SvgData};
+use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, MusicData, MusicTrack, Project, ProjectLink, SkillsData, SocialLink, SvgData};
 
 pub const HERO_DATA: HeroData = HeroData {
     name: "Reza Khaleghi \"PocketJack\"",
@@ -346,4 +346,330 @@ pub const EXPERIENCE_DATA: ExperienceData = ExperienceData {
             }],
         },
     ],
+};
+
+
+pub const MUSIC_DATA: MusicData = MusicData {
+    tracks: &[
+        MusicTrack {
+            title: "Farigo - Dark Alley",
+            youtube_url: "https://www.youtube.com/embed/yWnvb65k6_E",
+            description: "Produced by PocketJack x Moeeney",
+            platforms: &[
+                SocialLink {
+                    platform: "soundcloud",
+                    url: "https://soundcloud.com/farigo-music/dark-alley",
+                    title: "Listen on SoundCloud",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M3 9v6h4l5 5V4L7 9H3z",
+                            "M16 12h2",
+                            "M20 12h2",
+                        ],
+                    },
+                },
+                SocialLink {
+                    platform: "spotify",
+                    url: "https://open.spotify.com/track/0bs3pzYBAjC03KrvkSREiu?si=c858fdd71ca54790",
+                    title: "Listen on Spotify",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z",
+                            "M15.09 6.55a6.7 6.7 0 0 0-7.55 2.1 6.7 6.7 0 0 0 0 8.7 6.7 6.7 0 0 0 8.7 0",
+                            "M13.66 9.28a4.5 4.5 0 0 0-5.66 1.42 4.5 4.5 0 0 0 0 5.66",
+                            "M12.22 12a2.3 2.3 0 0 0-2.83.94 2.3 2.3 0 0 0 0 2.83",
+                        ],
+                    },
+                },
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=yWnvb65k6_E",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+        MusicTrack {
+            title: "Farigo - Perfection",
+            youtube_url: "https://www.youtube.com/embed/Iov95aS-O7U",
+            description: "Produced by PocketJack x Moeeney x 808K x 808Cash x Farigo",
+            platforms: &[
+                SocialLink {
+                    platform: "soundcloud",
+                    url: "https://soundcloud.com/farigo-music/perfection",
+                    title: "Listen on SoundCloud",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M3 9v6h4l5 5V4L7 9H3z",
+                            "M16 12h2",
+                            "M20 12h2",
+                        ],
+                    },
+                },
+                SocialLink {
+                    platform: "spotify",
+                    url: "https://open.spotify.com/track/6hSHnuPlqLhkpGCbpYvVXn?si=1a002fbf245e411a",
+                    title: "Listen on Spotify",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z",
+                            "M15.09 6.55a6.7 6.7 0 0 0-7.55 2.1 6.7 6.7 0 0 0 0 8.7 6.7 6.7 0 0 0 8.7 0",
+                            "M13.66 9.28a4.5 4.5 0 0 0-5.66 1.42 4.5 4.5 0 0 0 0 5.66",
+                            "M12.22 12a2.3 2.3 0 0 0-2.83.94 2.3 2.3 0 0 0 0 2.83",
+                        ],
+                    },
+                },
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=Iov95aS-O7U",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+        MusicTrack {
+            title: "Farigo - Freestyle",
+            youtube_url: "https://www.youtube.com/embed/7dofpxeOHCw",
+            description: "Produced by PocketJack x Moeeney",
+            platforms: &[
+                SocialLink {
+                    platform: "soundcloud",
+                    url: "https://soundcloud.com/farigo-music/freestyle",
+                    title: "Listen on SoundCloud",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M3 9v6h4l5 5V4L7 9H3z",
+                            "M16 12h2",
+                            "M20 12h2",
+                        ],
+                    },
+                },
+                SocialLink {
+                    platform: "spotify",
+                    url: "https://open.spotify.com/album/5hvV1cVf9EkJu9tvFHxE5L?si=1ysLkteqSpGv322yCOzctw",
+                    title: "Listen on Spotify",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z",
+                            "M15.09 6.55a6.7 6.7 0 0 0-7.55 2.1 6.7 6.7 0 0 0 0 8.7 6.7 6.7 0 0 0 8.7 0",
+                            "M13.66 9.28a4.5 4.5 0 0 0-5.66 1.42 4.5 4.5 0 0 0 0 5.66",
+                            "M12.22 12a2.3 2.3 0 0 0-2.83.94 2.3 2.3 0 0 0 0 2.83",
+                        ],
+                    },
+                },
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=7dofpxeOHCw",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+        MusicTrack {
+            title: "Blue (demo)",
+            youtube_url: "https://www.youtube.com/embed/G6mtWxIcYHA",
+            description: "Produced by PocketJack x NersiBeats x 808Cash",
+            platforms: &[
+                SocialLink {
+                    platform: "soundcloud",
+                    url: "https://soundcloud.com/pocketjack/blue",
+                    title: "Listen on SoundCloud",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M3 9v6h4l5 5V4L7 9H3z",
+                            "M16 12h2",
+                            "M20 12h2",
+                        ],
+                    },
+                },
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=G6mtWxIcYHA",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+        MusicTrack {
+            title: "Mayas - Marpich",
+            youtube_url: "https://www.youtube.com/embed/FoUr4ZgbvQo",
+            description: "From my ex-band MAYAS, formed in 2017. I played the bass guitar.",
+            platforms: &[
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=FoUr4ZgbvQo",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+        MusicTrack {
+            title: "Dayan - Shekaste | Live Performance",
+            youtube_url: "https://youtube.com/embed/oS6rGsPtze4?si=Oukuy7S3Uhf9IOdu",
+            description: "A live session featuring three demo tracks by Dayan. I performed as the acoustic guitarist.",
+            platforms: &[
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=oS6rGsPtze4",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+        MusicTrack {
+            title: "Trap Type Beat | FREE",
+            youtube_url: "https://youtube.com/embed/5Wh_iyh2Ino",
+            description: "Produced by PocketJack x NersiBeats",
+            platforms: &[
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=5Wh_iyh2Ino",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+        MusicTrack {
+            title: "Moeeney - Liar",
+            youtube_url: "https://www.youtube.com/embed/bGGL5BsdGEY",
+            description: "Produced by PocketJack x Moeeney x Rwayne",
+            platforms: &[
+                SocialLink {
+                    platform: "youtube",
+                    url: "https://www.youtube.com/watch?v=bGGL5BsdGEY",
+                    title: "Listen on YouTube",
+                    svg: SvgData {
+                        width: 24,
+                        height: 24,
+                        view_box: "0 0 24 24",
+                        paths: &[
+                            "M21 4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4z",
+                            "M10 8l6 4-6 4V8z",
+                        ],
+                    },
+                },
+            ],
+        },
+    ],
+};
+
+
+
+pub const SKILLS_DATA: SkillsData = SkillsData {
+    technical_skills: &[
+        "Rust", "WASM", "JavaScript", "TypeScript", "Nest.Js", "SpringBoot", "Git", "Docker",
+        "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
+        "REST-APIs", "BlockChain", "Web3", "Test", "HTML",
+    ],
+    hobbies: &["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing", "Camping", "Tanbour"],
+    languages: &["English", "German", "Persian"],
+    technical_icon: SvgData {
+        width: 20,
+        height: 20,
+        view_box: "0 0 24 24",
+        paths: &[
+            "M16 18l6-6-6-6",
+            "M8 6l-6 6 6 6",
+        ],
+    },
+    hobby_icon: SvgData {
+        width: 20,
+        height: 20,
+        view_box: "0 0 24 24",
+        paths: &[
+            "M2 22h20",
+            "M6 2v16a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V8",
+            "M20 2v16a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V8",
+            "M10 6h4",
+            "M8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
+            "M16 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
+        ],
+    },
+    language_icon: SvgData {
+        width: 20,
+        height: 20,
+        view_box: "0 0 24 24",
+        paths: &[
+            "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+            "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+            "M2 12h20",
+        ],
+    },
 };

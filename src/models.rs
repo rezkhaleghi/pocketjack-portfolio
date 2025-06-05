@@ -87,3 +87,31 @@ pub struct ExperienceLink<'a> {
     pub text: &'a str,
     pub url: &'a str,
 }
+
+
+
+
+#[derive(Debug, Clone)]
+pub struct MusicData<'a> {
+    pub tracks: &'a [MusicTrack<'a>],
+}
+
+#[derive(Debug, Clone)]
+pub struct MusicTrack<'a> {
+    pub title: &'a str,
+    pub youtube_url: &'a str,
+    pub description: &'a str,
+    pub platforms: &'a [SocialLink<'a>],
+}
+
+
+
+#[derive(Debug, Clone)]
+pub struct SkillsData<'a> {
+    pub technical_skills: &'a [&'a str],
+    pub hobbies: &'a [&'a str],
+    pub languages: &'a [&'a str],
+    pub technical_icon: SvgData<'a>,
+    pub hobby_icon: SvgData<'a>,
+    pub language_icon: SvgData<'a>,
+}
