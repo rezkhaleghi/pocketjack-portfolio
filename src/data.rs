@@ -204,8 +204,6 @@ pub const CLIENT_PROJECTS_DATA: &[Project] = &[
     },
 ];
 
-
-
 pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
     Project {
         image: "./static/fairfly.jpg",
@@ -275,8 +273,6 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
     },
 ];
 
-
-
 pub const CONTACT_DATA: ContactData = ContactData {
     description: "Interested in working together or have questions about my work? Feel free to reach out through any of the channels below.",
     links: &[
@@ -297,9 +293,6 @@ pub const CONTACT_DATA: ContactData = ContactData {
         },
     ],
 };
-
-
-
 
 pub const EXPERIENCE_DATA: ExperienceData = ExperienceData {
     experiences: &[
@@ -347,7 +340,6 @@ pub const EXPERIENCE_DATA: ExperienceData = ExperienceData {
         },
     ],
 };
-
 
 pub const MUSIC_DATA: MusicData = MusicData {
     tracks: &[
@@ -629,8 +621,6 @@ pub const MUSIC_DATA: MusicData = MusicData {
         },
     ],
 };
-
-
 
 // pub const SKILLS_DATA: SkillsData = SkillsData {
 //     technical_skills: &[
