@@ -21,3 +21,14 @@ pub struct SvgData<'a> {
     pub view_box: &'a str,
     pub paths: &'a [&'a str],
 }
+
+#[derive(Debug, Clone)]
+pub struct AboutData<'a> {
+    pub sections: &'a [AboutSection<'a>],
+}
+
+#[derive(Debug, Clone)]
+pub struct AboutSection<'a> {
+    pub emoji: &'a str,
+    pub text: &'a str,
+}

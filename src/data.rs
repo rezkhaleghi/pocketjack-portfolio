@@ -1,4 +1,4 @@
-use crate::models::{HeroData, SocialLink, SvgData};
+use crate::models::{AboutData, AboutSection, HeroData, SocialLink, SvgData};
 
 pub const HERO_DATA: HeroData = HeroData {
     name: "Reza Khaleghi \"PocketJack\"",
@@ -97,6 +97,31 @@ pub const HERO_DATA: HeroData = HeroData {
                     "M20 18V6",
                 ],
             },
+        },
+    ],
+};
+
+pub const ABOUT_DATA: AboutData = AboutData {
+    sections: &[
+        AboutSection {
+            emoji: "🗿",
+            text: "Hello World, This is Reza Khaleghi AKA Pocketjack. Software engineer, Musician and co-founder of FALSE-FOUNDATION. Born on July 25, 2000, currently base in Turkey.",
+        },
+        AboutSection {
+            emoji: "💻",
+            text: "My journey into tech started back in 2011 when I began learning computer programming. I spent a couple of years dabbling in different areas like networking and security, but it wasn’t until I found backend development that everything clicked. I started out as a freelancer and eventually moved into leading backend teams, focusing on building scalable and efficient systems.",
+        },
+        AboutSection {
+            emoji: "🎵",
+            text: "Outside of tech, I’m all about music. I picked up the bass guitar in 2013, then moved on to the acoustic guitar, and got hooked on rock music. In 2020, I dove into trap and hip-hop by making loops and beats, and it's become a hobby I still enjoy today.",
+        },
+        AboutSection {
+            emoji: "🦀🎷",
+            text: "Right now, I’m totally fascinated by two things: jazz music and Rust. They’ve both completely changed how I see the world—jazz opened my ears to a whole new dimension of sound, while Rust has shifted how I think about programming, making it even more enjoyable and powerful.",
+        },
+        AboutSection {
+            emoji: "🏕️",
+            text: "When I'm not coding or making music, you'll probably find me out in nature—whether it’s camping, hiking, or traveling. These have been passions of mine since I was a kid. If I’m back in Iran, you’ll probably catch me offroading in my old Land Rover, chasing that next adventure.",
         },
     ],
 };
