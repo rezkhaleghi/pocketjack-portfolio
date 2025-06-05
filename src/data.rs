@@ -1,4 +1,4 @@
-use crate::models::{AboutData, AboutSection, HeroData, SocialLink, SvgData};
+use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, Project, ProjectLink, SocialLink, SvgData};
 
 pub const HERO_DATA: HeroData = HeroData {
     name: "Reza Khaleghi \"PocketJack\"",
@@ -122,6 +122,228 @@ pub const ABOUT_DATA: AboutData = AboutData {
         AboutSection {
             emoji: "🏕️",
             text: "When I'm not coding or making music, you'll probably find me out in nature—whether it’s camping, hiking, or traveling. These have been passions of mine since I was a kid. If I’m back in Iran, you’ll probably catch me offroading in my old Land Rover, chasing that next adventure.",
+        },
+    ],
+};
+
+pub const CLIENT_PROJECTS_DATA: &[Project] = &[
+    Project {
+        image: "./static/tmar.png",
+        title: "Tmar-Travel",
+        description: "Developed TMAR Travel, a ride-hailing platform for eco-tourism and off-road trips, where users can request a ride by selecting pickup, destination, and vehicle type. Architected the entire backend from scratch using a microservices approach, ensuring scalability, real-time processing, and clean service communication. Led a small agile team, guiding development, design patterns, and on-time delivery.",
+        links: &[ProjectLink {
+            text: "View Website →",
+            url: "https://tmar.app",
+        }],
+        technologies: "Node.Js, Nest.Js, MSSQL, MongoDB",
+    },
+    Project {
+        image: "./static/test.jpg",
+        title: "UNFXB-Explorer",
+        description: "Developed a multi-chain blockchain explorer enabling users to search transactions, wallets, hashes, and blocks across various blockchain networks including Bitcoin, Ethereum, Tron, Bitcoin Cash, Dogecoin, and Binance Coin (BNB). Leveraged blockchain APIs and technologies to create a user-friendly interface for navigating and exploring blockchain data across multiple networks.",
+        links: &[ProjectLink {
+            text: "View Website →",
+            url: "https://explorer.unfxbit.com",
+        }],
+        technologies: "Node.Js, MongoDB",
+    },
+    Project {
+        image: "./static/poudi.png",
+        title: "Poudi-Guitar",
+        description: "Engineered a simple guitar/music e-learning platform with robust e-commerce features and protected access codes. Orchestrated backend development for smooth and reliable user interaction, ensuring a user-friendly experience for accessing tutorial videos.",
+        links: &[ProjectLink {
+            text: "View Website →",
+            url: "https://poudiguitar.com",
+        }],
+        technologies: "Node.Js, MongoDB",
+    },
+    Project {
+        image: "./static/test.jpg",
+        title: "Knowledge Management System(KMS)",
+        description: "I successfully developed the backend of a Knowledge Management System (KMS) that functions as a social network for knowledge sharing and collaboration, using the KeystoneJS framework, a simple and flexible Node.js framework. This project involved creating a robust and scalable platform that enables users to connect, share insights, and manage knowledge assets within an organization.",
+        links: &[],
+        technologies: "KeystoneJS, PostgreSQL, GraphQL, Node.Js",
+    },
+    Project {
+        image: "./static/test.jpg",
+        title: "VVC Exchange",
+        description: "Constructed a decentralized cryptocurrency exchange platform on the Stellar blockchain, enabling global fiat/crypto transfers and offering a versatile payment gateway.",
+        links: &[],
+        technologies: "Node.Js, Stellar Blockchain, MongoDB",
+    },
+    Project {
+        image: "./static/test.jpg",
+        title: "Wallet Custody",
+        description: "Wallet Custody is a high-performance backend system designed to interface directly with multiple blockchain nodes (e.g., BTC, ETH, TRX, DOGE). It connects to these nodes to read blocks, monitor transactions in real time, and extract on-chain data critical for exchange and broker operations. Serving as the backbone of trading platforms, Wallet Custody ensures reliable transaction tracking, wallet activity monitoring, and seamless multi-chain support—all built with scalability and security in mind.",
+        links: &[],
+        technologies: "Nest.Js, MongoDB, Redis, RabbitMQ, bitcoin-core, web3.js",
+    },
+    Project {
+        image: "./static/airgap.png",
+        title: "AIR GAP",
+        description: "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user. The application is packaged as a single executable binary file.",
+        links: &[],
+        technologies: "Rust, HTML, CSS",
+    },
+    Project {
+        image: "./static/digi.png",
+        title: "DG-CMS",
+        description: "Built a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
+        links: &[ProjectLink {
+            text: "View Website →",
+            url: "https://digialpha.agency",
+        }],
+        technologies: "Node.js, Express.js, MongoDB",
+    },
+    Project {
+        image: "./static/test.jpg",
+        title: "Crypto Telegram Bot",
+        description: "Developed a Telegram bot that provides users with real-time on-chain data and whale activity alerts by integrating with Glassnode and Whale Alert APIs. Users can send cryptocurrency symbols (like BTC) to the bot and receive key on-chain metrics—such as transaction volume, exchange flows, and active addresses—along with major whale transfers and market-moving events. This tool offers a fast and accessible way to monitor blockchain trends and large transactions right within Telegram.",
+        links: &[],
+        technologies: "Node.js",
+    },
+];
+
+
+
+pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
+    Project {
+        image: "./static/fairfly.jpg",
+        title: "Fair-Fly",
+        description: "Fair Fly is a web-based app that helps users find and compare affordable flight deals across multiple providers. Its core feature is a smart price alert system that notifies users when fares drop to their preferred price.",
+        links: &[ProjectLink {
+            text: "View Website →",
+            url: "https://fairfly.site",
+        }],
+        technologies: "Rust, WebAssembly, actix-web, Yew, MongoDB",
+    },
+    Project {
+        image: "./static/jorcolab.jpg",
+        title: "Jorco-Lab",
+        description: "Jorcolab is a creative hub and digital marketplace for musicians, producers, and artists. Discover and purchase high-quality beats and samples, book studio time, or offer and hire music services like mixing, mastering, recording, and live instrumentation.",
+        links: &[ProjectLink {
+            text: "View Website →",
+            url: "https://jorcolab.com",
+        }],
+        technologies: "TypeScript, Nest.js, MongoDB",
+    },
+    Project {
+        image: "./static/test.jpg",
+        title: "False-Player",
+        description: "False Player is a web platform and Telegram mini app that lets users search for movies, music, videos, and books from across the internet. Stream movies and music online directly—fast, free, and without the hassle.",
+        links: &[
+            ProjectLink {
+                text: "View Website →",
+                url: "https://player.false.foundation",
+            },
+            ProjectLink {
+                text: "View Telegram App →",
+                url: "https://t.me/FalsePlayer_bot",
+            },
+        ],
+        technologies: "Rust, actix-web, teloxide, MongoDB",
+    },
+    Project {
+        image: "./static/pjplayer.gif",
+        title: "PJ-Player",
+        description: "PJ-Player is a Rust-based CLI tool that allows you to search, download, and stream audio directly from your terminal.",
+        links: &[ProjectLink {
+            text: "View Project →",
+            url: "https://player.false.foundation",
+        }],
+        technologies: "Rust, crossterm",
+    },
+    Project {
+        image: "./static/pjgrep.png",
+        title: "PJ-Grep",
+        description: "A fast, flexible pattern search tool for files and directories. Easily search for patterns in filenames and content, filter by file extensions, and get color-coded results.",
+        links: &[ProjectLink {
+            text: "View Project →",
+            url: "https://github.com/rezkhaleghi/pj-grep",
+        }],
+        technologies: "Rust",
+    },
+    Project {
+        image: "./static/portfolio.png",
+        title: "THIS WEBSITE :)",
+        description: "I built this website using Yew, a Rust framework for creating web applications. It showcases my projects and skills, and serves as a portfolio to demonstrate my work.",
+        links: &[ProjectLink {
+            text: "View Website →",
+            url: "https://reza.false.foundation",
+        }],
+        technologies: "Rust, Yew, WebAssembly",
+    },
+];
+
+
+
+pub const CONTACT_DATA: ContactData = ContactData {
+    description: "Interested in working together or have questions about my work? Feel free to reach out through any of the channels below.",
+    links: &[
+        ContactLink {
+            platform: "Email",
+            url: "mailto:rezaxkhaleghi@gmail.com",
+            display_text: "rezaxkhaleghi@gmail.com",
+        },
+        ContactLink {
+            platform: "GitHub",
+            url: "https://github.com/rezkhaleghi",
+            display_text: "github.com/rezkhaleghi",
+        },
+        ContactLink {
+            platform: "LinkedIn",
+            url: "https://linkedin.com/in/rezaxkhaleghi",
+            display_text: "linkedin.com/in/rezaxkhaleghi",
+        },
+    ],
+};
+
+
+
+
+pub const EXPERIENCE_DATA: ExperienceData = ExperienceData {
+    experiences: &[
+        Experience {
+            title: "Software Engineer",
+            company: "Unicorn Forex Broker",
+            date: "2024 - Present",
+            description: "Assisted in developing secure wallet custody systems and independently created an air-gapped encryption solution for private key management. Designed and implemented a multi-chain blockchain explorer to streamline transaction tracking across networks. Focused on optimizing workflows and enhancing security in blockchain-based financial services.",
+            image: "/static/we3.jpg",
+            technologies: "Rust, WebAssembly, MongoDB",
+            links: &[],
+        },
+        Experience {
+            title: "Lead BackEnd Developer",
+            company: "TMAR",
+            date: "2022 - Present",
+            description: "Pioneered the development of TMAR Travel from scratch, architecting the entire backend, design patterns, and structures. Continuously enhanced and maintained the platform, enabling users to request off-road vehicles with professional drivers for their trips. Managed a small group of developers and designers, ensuring effective collaboration and project delivery.",
+            image: "/static/we2.jpg",
+            technologies: "TypeScript, Nest.js, MongoDB, AWS",
+            links: &[ExperienceLink {
+                text: "View Website →",
+                url: "https://tmartravel.com",
+            }],
+        },
+        Experience {
+            title: "BackEnd Developer",
+            company: "DigiAlpha",
+            date: "2020 - 2022",
+            description: "Played a pivotal role in developing several blockchain projects for DigiAlpha, contributing to the company's web development portfolio and success as a business landing page.",
+            image: "/static/we1.jpg",
+            technologies: "JavaScript, Node.js, MongoDB, Blockchain",
+            links: &[],
+        },
+        Experience {
+            title: "Web Developer",
+            company: "Freelance",
+            date: "2016 - Present",
+            description: "As a freelance developer, I’ve delivered a wide range of projects—from simple e-commerce websites to fully customized business solutions. My work spans web applications, Telegram bots, API integrations, and custom backend systems, tailored to meet unique client needs.",
+            image: "/static/we0.jpg",
+            technologies: "Rust, TypeScript, React, MongoDB, Telegram API",
+            links: &[ExperienceLink {
+                text: "View Portfolio →",
+                url: "https://reza.false.foundation",
+            }],
         },
     ],
 };

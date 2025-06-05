@@ -1,6 +1,7 @@
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
+use crate::data::PERSONAL_PROJECTS_DATA;
 
 #[function_component(Projects)]
 pub fn projects() -> Html {
@@ -12,53 +13,7 @@ pub fn projects() -> Html {
             .unwrap_or(0.0)
     });
 
-    let projects = vec![
-        (
-            "./static/fairfly.jpg",
-            "Fair-Fly",
-            "Fair Fly is a web-based app that helps users find and compare affordable flight deals across multiple providers. Its core feature is a smart price alert system that notifies users when fares drop to their preferred price.",
-            vec![("View Website →", "https://fairfly.site")],
-            "Rust, WebAssembly, actix-web, Yew, MongoDB"
-        ),
-        (
-            "./static/jorcolab.jpg",
-            "Jorco-Lab",
-            "Jorcolab is a creative hub and digital marketplace for musicians, producers, and artists. Discover and purchase high-quality beats and samples, book studio time, or offer and hire music services like mixing, mastering, recording, and live instrumentation.",
-            vec![("View Website →", "https://jorcolab.com")],
-            "TypeScript, Nest.js, MongoDB"
-        ),
-        (
-            "./static/test.jpg",
-            "False-Player",
-            "False Player is a web platform and Telegram mini app that lets users search for movies, music, videos, and books from across the internet. Stream movies and music online directly—fast, free, and without the hassle.",
-            vec![
-                ("View Website →", "https://player.false.foundation"),
-                ("View Telegram App →", "https://t.me/FalsePlayer_bot")
-            ],
-            "Rust, actix-web, teloxide, MongoDB"
-        ),
-        (
-            "./static/pjplayer.gif",
-            "PJ-Player",
-            "PJ-Player is a Rust-based CLI tool that allows you to search, download, and stream audio directly from your terminal.",
-            vec![("View Project →", "https://player.false.foundation")],
-            "Rust, crossterm"
-        ),
-        (
-            "./static/pjgrep.png",
-            "PJ-Grep",
-            "A fast, flexible pattern search tool for files and directories. Easily search for patterns in filenames and content, filter by file extensions, and get color-coded results.",
-            vec![("View Project →", "https://github.com/rezkhaleghi/pj-grep")],
-            "Rust"
-        ),
-        (
-            "./static/portfolio.png",
-            "THIS WEBSITE :)",
-            "I built this website using Yew, a Rust framework for creating web applications. It showcases my projects and skills, and serves as a portfolio to demonstrate my work.",
-            vec![("View Website →", "https://reza.false.foundation")],
-            "Rust, Yew, WebAssembly"
-        ),
-    ];
+    let projects = PERSONAL_PROJECTS_DATA;
 
     let total_projects = projects.len();
     let cards_per_slide = if *window_width <= 768.0 { 1 } else { 3 };
@@ -166,22 +121,22 @@ pub fn projects() -> Html {
                         html! {
                             <div class="cards">
                                 {
-                                    projects.iter().map(|(img, title, desc, links, tech)| {
+                                    projects.iter().map(|project| {
                                         html! {
                                             <div class="card">
-                                                <img src={*img} alt={*title} class="project-image"/>
-                                                <h3 class="card-title">{ *title }</h3>
-                                                <p class="card-content">{ *desc }</p>
+                                                <img src={project.image} alt={project.title} class="project-image"/>
+                                                <h3 class="card-title">{ project.title }</h3>
+                                                <p class="card-content">{ project.description }</p>
                                                 {
-                                                    links.iter().map(|(text, url)| {
+                                                    project.links.iter().map(|link| {
                                                         html! {
-                                                            <a href={*url} class="card-link">{ *text }</a>
+                                                            <a href={link.url} class="card-link">{ link.text }</a>
                                                         }
                                                     }).collect::<Html>()
                                                 }
                                                 <div style="margin-top: 1rem;">
                                                     <span style="color: var(--accent); font-weight: 600; margin-right: 0.5rem;">{ "Technologies:" }</span>
-                                                    <span>{ *tech }</span>
+                                                    <span>{ project.technologies }</span>
                                                 </div>
                                             </div>
                                         }
@@ -206,23 +161,23 @@ pub fn projects() -> Html {
                                                 html! {
                                                     <div class="slider-page" key={slide_index}>
                                                         {
-                                                            chunk.iter().map(|(img, title, desc, links, tech)| {
+                                                            chunk.iter().map(|project| {
                                                                 html! {
                                                                     <div class="slider-card">
                                                                         <div class="card">
-                                                                            <img src={*img} alt={*title} class="project-image"/>
-                                                                            <h3 class="card-title">{ *title }</h3>
-                                                                            <p class="card-content">{ *desc }</p>
+                                                                            <img src={project.image} alt={project.title} class="project-image"/>
+                                                                            <h3 class="card-title">{ project.title }</h3>
+                                                                            <p class="card-content">{ project.description }</p>
                                                                             {
-                                                                                links.iter().map(|(text, url)| {
+                                                                                project.links.iter().map(|link| {
                                                                                     html! {
-                                                                                        <a href={*url} class="card-link">{ *text }</a>
+                                                                                        <a href={link.url} class="card-link">{ link.text }</a>
                                                                                     }
                                                                                 }).collect::<Html>()
                                                                             }
                                                                             <div style="margin-top: 1rem;">
                                                                                 <span style="color: var(--accent); font-weight: 600; margin-right: 0.5rem;">{ "Technologies:" }</span>
-                                                                                <span>{ *tech }</span>
+                                                                                <span>{ project.technologies }</span>
                                                                             </div>
                                                                         </div>
                                                                     </div>

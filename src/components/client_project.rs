@@ -1,6 +1,7 @@
 use wasm_bindgen::{prelude::Closure, JsCast};
 use yew::prelude::*;
 use web_sys::window;
+use crate::data::CLIENT_PROJECTS_DATA;
 
 #[function_component(ClientProjects)]
 pub fn client_projects() -> Html {
@@ -12,71 +13,7 @@ pub fn client_projects() -> Html {
             .unwrap_or(0.0)
     });
 
-    let projects = vec![
-        (
-            "./static/tmar.png",
-            "Tmar-Travel",
-            "Developed TMAR Travel, a ride-hailing platform for eco-tourism and off-road trips, where users can request a ride by selecting pickup, destination, and vehicle type. Architected the entire backend from scratch using a microservices approach, ensuring scalability, real-time processing, and clean service communication. Led a small agile team, guiding development, design patterns, and on-time delivery.",
-            vec![("View Website →", "https://tmar.app")],
-            "Node.Js, Nest.Js, MSSQL, MongoDB"
-        ),
-        (
-            "./static/test.jpg",
-            "UNFXB-Explorer",
-            "Developed a multi-chain blockchain explorer enabling users to search transactions, wallets, hashes, and blocks across various blockchain networks including Bitcoin, Ethereum, Tron, Bitcoin Cash, Dogecoin, and Binance Coin (BNB). Leveraged blockchain APIs and technologies to create a user-friendly interface for navigating and exploring blockchain data across multiple networks.",
-            vec![("View Website →", "https://explorer.unfxbit.com")],
-            "Node.Js, MongoDB"
-        ),
-        (
-            "./static/poudi.png",
-            "Poudi-Guitar",
-            "Engineered a simple guitar/music e-learning platform with robust e-commerce features and protected access codes. Orchestrated backend development for smooth and reliable user interaction, ensuring a user-friendly experience for accessing tutorial videos.",
-            vec![("View Website →", "https://poudiguitar.com")],
-            "Node.Js, MongoDB"
-        ),
-        (
-            "./static/test.jpg",
-            "Knowledge Management System(KMS)",
-            "I successfully developed the backend of a Knowledge Management System (KMS) that functions as a social network for knowledge sharing and collaboration, using the KeystoneJS framework, a simple and flexible Node.js framework. This project involved creating a robust and scalable platform that enables users to connect, share insights, and manage knowledge assets within an organization.",
-            vec![],
-            "KeystoneJS, PostgreSQL, GraphQL, Node.Js"
-        ),
-        (
-            "./static/test.jpg",
-            "VVC Exchange",
-            "Constructed a decentralized cryptocurrency exchange platform on the Stellar blockchain, enabling global fiat/crypto transfers and offering a versatile payment gateway.",
-            vec![],
-            "Node.Js, Stellar Blockchain, MongoDB"
-        ),
-        (
-            "./static/test.jpg",
-            "Wallet Custody",
-            "Wallet Custody is a high-performance backend system designed to interface directly with multiple blockchain nodes (e.g., BTC, ETH, TRX, DOGE). It connects to these nodes to read blocks, monitor transactions in real time, and extract on-chain data critical for exchange and broker operations. Serving as the backbone of trading platforms, Wallet Custody ensures reliable transaction tracking, wallet activity monitoring, and seamless multi-chain support—all built with scalability and security in mind.",
-            vec![],
-            "Nest.Js, MongoDB, Redis, RabbitMQ, bitcoin-core, web3.js"
-        ),
-        (
-            "./static/airgap.png",
-            "AIR GAP",
-            "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user. The application is packaged as a single executable binary file.",
-            vec![],
-            "Rust, HTML, CSS"
-        ),
-        (
-            "./static/digi.png",
-            "DG-CMS",
-            "Built a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
-            vec![("View Website →", "https://digialpha.agency")],
-            "Node.js, Express.js, MongoDB"
-        ),
-        (
-            "./static/test.jpg",
-            "Crypto Telegram Bot",
-            "Developed a Telegram bot that provides users with real-time on-chain data and whale activity alerts by integrating with Glassnode and Whale Alert APIs. Users can send cryptocurrency symbols (like BTC) to the bot and receive key on-chain metrics—such as transaction volume, exchange flows, and active addresses—along with major whale transfers and market-moving events. This tool offers a fast and accessible way to monitor blockchain trends and large transactions right within Telegram.",
-            vec![],
-            "Node.js"
-        ),
-    ];
+    let projects = CLIENT_PROJECTS_DATA;
 
     let total_projects = projects.len();
     let cards_per_slide = if *window_width <= 768.0 { 1 } else { 3 };
@@ -184,22 +121,22 @@ pub fn client_projects() -> Html {
                         html! {
                             <div class="cards">
                                 {
-                                    projects.iter().map(|(img, title, desc, links, tech)| {
+                                    projects.iter().map(|project| {
                                         html! {
                                             <div class="card">
-                                                <img src={*img} alt={*title} class="project-image"/>
-                                                <h3 class="card-title">{ *title }</h3>
-                                                <p class="card-content">{ *desc }</p>
+                                                <img src={project.image} alt={project.title} class="project-image"/>
+                                                <h3 class="card-title">{ project.title }</h3>
+                                                <p class="card-content">{ project.description }</p>
                                                 {
-                                                    links.iter().map(|(text, url)| {
+                                                    project.links.iter().map(|link| {
                                                         html! {
-                                                            <a href={*url} class="card-link">{ *text }</a>
+                                                            <a href={link.url} class="card-link">{ link.text }</a>
                                                         }
                                                     }).collect::<Html>()
                                                 }
                                                 <div style="margin-top: 1rem;">
                                                     <span style="color: var(--accent); font-weight: 600; margin-right: 0.5rem;">{ "Technologies:" }</span>
-                                                    <span>{ *tech }</span>
+                                                    <span>{ project.technologies }</span>
                                                 </div>
                                             </div>
                                         }
@@ -224,23 +161,23 @@ pub fn client_projects() -> Html {
                                                 html! {
                                                     <div class="slider-page" key={slide_index}>
                                                         {
-                                                            chunk.iter().map(|(img, title, desc, links, tech)| {
+                                                            chunk.iter().map(|project| {
                                                                 html! {
                                                                     <div class="slider-card">
                                                                         <div class="card">
-                                                                            <img src={*img} alt={*title} class="project-image"/>
-                                                                            <h3 class="card-title">{ *title }</h3>
-                                                                            <p class="card-content">{ *desc }</p>
+                                                                            <img src={project.image} alt={project.title} class="project-image"/>
+                                                                            <h3 class="card-title">{ project.title }</h3>
+                                                                            <p class="card-content">{ project.description }</p>
                                                                             {
-                                                                                links.iter().map(|(text, url)| {
+                                                                                project.links.iter().map(|link| {
                                                                                     html! {
-                                                                                        <a href={*url} class="card-link">{ *text }</a>
+                                                                                        <a href={link.url} class="card-link">{ link.text }</a>
                                                                                     }
                                                                                 }).collect::<Html>()
                                                                             }
                                                                             <div style="margin-top: 1rem;">
                                                                                 <span style="color: var(--accent); font-weight: 600; margin-right: 0.5rem;">{ "Technologies:" }</span>
-                                                                                <span>{ *tech }</span>
+                                                                                <span>{ project.technologies }</span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
