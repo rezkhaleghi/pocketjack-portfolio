@@ -246,8 +246,8 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
         title: "PJ-Player",
         description: "PJ-Player is a Rust-based CLI tool that allows you to search, download, and stream audio directly from your terminal.",
         links: &[ProjectLink {
-            text: "View Project →",
-            url: "https://player.false.foundation",
+            text: "View Source Code →",
+            url: "https://github.com/rezkhaleghi/pj-player",
         }],
         technologies: "Rust, crossterm",
     },
@@ -256,7 +256,7 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
         title: "PJ-Grep",
         description: "A fast, flexible pattern search tool for files and directories. Easily search for patterns in filenames and content, filter by file extensions, and get color-coded results.",
         links: &[ProjectLink {
-            text: "View Project →",
+            text: "View Source Code →",
             url: "https://github.com/rezkhaleghi/pj-grep",
         }],
         technologies: "Rust",
@@ -265,9 +265,14 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
         image: "./static/portfolio.png",
         title: "THIS WEBSITE :)",
         description: "I built this website using Yew, a Rust framework for creating web applications. It showcases my projects and skills, and serves as a portfolio to demonstrate my work.",
-        links: &[ProjectLink {
+        links: &
+        [ProjectLink {
             text: "View Website →",
-            url: "https://reza.false.foundation",
+            url: "https://pocketjack.vercel.app",
+        },
+        ProjectLink {
+            text: "View Source Code →",
+            url: "https://github.com/rezkhaleghi/pocketjack-portfolio"
         }],
         technologies: "Rust, Yew, WebAssembly",
     },
