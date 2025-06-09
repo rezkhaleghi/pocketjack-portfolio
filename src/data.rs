@@ -318,7 +318,7 @@ pub const EXPERIENCE_DATA: ExperienceData = ExperienceData {
             company: "TMAR",
             date: "2022 - Present",
             description: "Pioneered the development of TMAR Travel from scratch, architecting the entire backend, design patterns, and structures. Continuously enhanced and maintained the platform, enabling users to request off-road vehicles with professional drivers for their trips. Managed a small group of developers and designers, ensuring effective collaboration and project delivery.",
-            image: "/static/we2.jpg",
+            image: "/static/we-tmar.jpg",
             technologies: "TypeScript, Nest.js, Node.js, Docker, MongoDB, Redis, MSSQL",
             links: &[ExperienceLink {
                 text: "View Website →",
