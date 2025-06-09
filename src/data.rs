@@ -100,7 +100,7 @@ pub const HERO_DATA: HeroData = HeroData {
         },
         SocialLink {
             platform: "medium",
-            url: "https://medium.com/@rezaxkhaleghi",
+            url: "https://medium.com/@pocketjack",
             title: "Medium",
             svg: SvgData {
                 width: "24",
