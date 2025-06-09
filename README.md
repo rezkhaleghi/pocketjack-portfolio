@@ -6,15 +6,16 @@ This is a personal portfolio website for Reza Khaleghi, also known as **PocketJa
 
 ## Features
 
-- **Hero Section**: Introduces Reza with a brief bio, social media links, and a profile image.
+- **Hero Section**: Introduces Reza with a brief bio, social media links (including Medium), and a profile image.
 - **About Section**: Details Reza's background as a software engineer and musician, with a focus on his passions and interests.
-- **Skills Section**: Displays technical skills, hobbies, and languages in a visually appealing pyramid layout.
+- **Skills Section**: Displays technical skills and hobbies in a responsive grid layout with glowing hover effects, using data from `data.rs`.
+- **Languages Section**: Showcases language proficiencies with circular progress rings indicating skill levels.
 - **Personal Projects**: Highlights projects developed under Reza's company, FalseFoundation, with a carousel for browsing.
 - **Client Projects**: Showcases freelance and contract-based work with detailed descriptions and technologies used.
 - **Music Section**: Features music tracks with embedded YouTube players and links to platforms like Spotify and SoundCloud.
 - **Experience Section**: Presents a timeline of Reza's professional experience, including roles, companies, and technologies.
-- **Contact Section**: Contact stuff.
-- **Footer Section**: Licence,Copyright
+- **Contact Section**: Provides contact information.
+- **Footer Section**: Includes license and copyright details.
 
 ## Project Structure
 
@@ -29,7 +30,7 @@ pocketjack-portfolio/
 │   ├── main.rs
 │   ├── components/
 │   │   ├── about.rs
-│   │   ├── client_project.rs
+│   │   ├── client_projects.rs
 │   │   ├── experience.rs
 │   │   ├── footer.rs
 │   │   ├── header.rs
@@ -38,10 +39,13 @@ pocketjack-portfolio/
 │   │   ├── music.rs
 │   │   ├── my_projects.rs
 │   │   ├── skills.rs
-│   │   └── contact.rs
-|   ├── pages/
-│   │   ├── home.rs
+│   │   ├── contact.rs
+│   │   └── lang.rs
+│   ├── pages/
+│   │   ├── home.rs          # Integrates all components
 │   │   ├── mod.rs
+│   ├── data.rs
+│   ├── models.rs            # Defines data structures for Every parts
 ├── static/
 ```
 
@@ -98,7 +102,8 @@ pocketjack-portfolio/
 - Navigate through the sections using the browser.
 - The **Projects** and **Client Projects** sections feature a carousel for browsing multiple items (auto-advances every 5 seconds, pauses on hover).
 - The **Music** section includes embedded YouTube players for tracks and links to external platforms.
-- The **Skills** section displays skills in a pyramid layout, with technical skills in a reverse pyramid and hobbies/languages in normal pyramids.
+- The **Skills** section displays technical skills and hobbies in a responsive grid, with glowing hover effects on cards, sourced from `data.rs`.
+- The **Languages** section features circular progress rings indicating proficiency levels for English, German, and Persian, driven by `LANGUAGE_DATA` in `data.rs` and rendered by `lang.rs`.
 - The **Experience** section presents a timeline of professional roles.
 
 ## License
@@ -111,6 +116,7 @@ For inquiries, reach out via:
 
 - **LinkedIn**: [linkedin.com/in/rezaxkhaleghi](https://linkedin.com/in/rezaxkhaleghi)
 - **GitHub**: [github.com/rezkhaleghi](https://github.com/rezkhaleghi)
+- **Medium**: [medium.com/@rezaxkhaleghi](https://medium.com/@rezaxkhaleghi)
 - **Email**: (Rezaxkhaleghi@gmail.com)
 
 ---
