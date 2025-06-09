@@ -1,4 +1,6 @@
 [build]
+release = true
 dist = "dist"
-public_url = "/"
-static_dir = "static"
+
+[copy-files]
+"static" = "static"
