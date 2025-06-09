@@ -98,6 +98,21 @@ pub const HERO_DATA: HeroData = HeroData {
                 ],
             },
         },
+        SocialLink {
+            platform: "medium",
+            url: "https://medium.com/@rezaxkhaleghi",
+            title: "Medium",
+            svg: SvgData {
+                width: "24",
+                height: "24",
+                view_box: "0 0 24 24",
+                paths: &[
+                    "M2 3h20v18H2z",
+                    "M6.5 7.5l4.5 4.5-4.5 4.5",
+                    "M13 7.5h4.5",
+                ],
+            },
+        },
     ],
 };
 
