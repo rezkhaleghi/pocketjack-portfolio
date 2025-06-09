@@ -144,7 +144,7 @@ pub const ABOUT_DATA: AboutData = AboutData {
 
 pub const CLIENT_PROJECTS_DATA: &[Project] = &[
     Project {
-        image: "./static/tmar.png",
+        image: "./static/proj-tmar.png",
         title: "Tmar-Travel",
         description: "Developed TMAR Travel, a ride-hailing platform for eco-tourism and off-road trips, where users can request a ride by selecting pickup, destination, and vehicle type. Architected the entire backend from scratch using a microservices approach, ensuring scalability, real-time processing, and clean service communication. Led a small agile team, guiding development, design patterns, and on-time delivery.",
         links: &[ProjectLink {
@@ -164,7 +164,7 @@ pub const CLIENT_PROJECTS_DATA: &[Project] = &[
         technologies: "Node.Js, MongoDB",
     },
     Project {
-        image: "./static/poudi.png",
+        image: "./static/proj-poudi.png",
         title: "Poudi-Guitar",
         description: "Engineered a simple guitar/music e-learning platform with robust e-commerce features and protected access codes. Orchestrated backend development for smooth and reliable user interaction, ensuring a user-friendly experience for accessing tutorial videos.",
         links: &[ProjectLink {
@@ -195,14 +195,14 @@ pub const CLIENT_PROJECTS_DATA: &[Project] = &[
         technologies: "Nest.Js, MongoDB, Redis, RabbitMQ, bitcoin-core, web3.js",
     },
     Project {
-        image: "./static/airgap.png",
+        image: "./static/proj-airgap.png",
         title: "AIR GAP",
         description: "The AIR-GAP Solution is a secure, offline-capable application designed for generating, encrypting, and managing cryptocurrency wallet mnemonic phrases (seed phrases). The application supports mnemonic generation in multiple languages (e.g., English) using 128-bit entropy and SHA-256 checksums, adhering to BIP-39 standards. It employs RSA-4096 for public-key encryption of mnemonics and AES-256-CBC for encrypting private keys, with unique initialization vectors (IVs) per user. The application is packaged as a single executable binary file.",
         links: &[],
         technologies: "Rust, HTML, CSS",
     },
     Project {
-        image: "./static/digi.png",
+        image: "./static/proj-digi.png",
         title: "DG-CMS",
         description: "Built a lightweight content management tool for DIGIALPHA Agency to help manage and publish blog posts and updates. The app allows the team to easily create, edit, and organize content through a simple interface tailored to their needs.",
         links: &[ProjectLink {
@@ -222,7 +222,7 @@ pub const CLIENT_PROJECTS_DATA: &[Project] = &[
 
 pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
     Project {
-        image: "./static/fairfly.jpg",
+        image: "./static/proj-fairfly.jpg",
         title: "Fair-Fly",
         description: "Fair Fly is a web-based app that helps users find and compare affordable flight deals across multiple providers. Its core feature is a smart price alert system that notifies users when fares drop to their preferred price.",
         links: &[ProjectLink {
@@ -232,7 +232,7 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
         technologies: "Rust, WebAssembly, actix-web, Yew, MongoDB",
     },
     Project {
-        image: "./static/jorcolab.jpg",
+        image: "./static/proj-jorcolab.jpg",
         title: "Jorco-Lab",
         description: "Jorcolab is a creative hub and digital marketplace for musicians, producers, and artists. Discover and purchase high-quality beats and samples, book studio time, or offer and hire music services like mixing, mastering, recording, and live instrumentation.",
         links: &[ProjectLink {
@@ -258,7 +258,7 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
         technologies: "Rust, actix-web, teloxide, MongoDB",
     },
     Project {
-        image: "./static/pjplayer.gif",
+        image: "./static/proj-pjplayer.gif",
         title: "PJ-Player",
         description: "PJ-Player is a Rust-based CLI tool that allows you to search, download, and stream audio directly from your terminal.",
         links: &[ProjectLink {
@@ -268,7 +268,7 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
         technologies: "Rust, crossterm",
     },
     Project {
-        image: "./static/pjgrep.png",
+        image: "./static/proj-pjgrep.png",
         title: "PJ-Grep",
         description: "A fast, flexible pattern search tool for files and directories. Easily search for patterns in filenames and content, filter by file extensions, and get color-coded results.",
         links: &[ProjectLink {
@@ -278,7 +278,7 @@ pub const PERSONAL_PROJECTS_DATA: &[Project] = &[
         technologies: "Rust",
     },
     Project {
-        image: "./static/portfolio.png",
+        image: "./static/proj-portfolio.png",
         title: "THIS WEBSITE :)",
         description: "I built this website using Yew, a Rust framework for creating web applications. It showcases my projects and skills, and serves as a portfolio to demonstrate my work.",
         links: &
@@ -656,7 +656,7 @@ pub const SKILLS_DATA: SkillsData = SkillsData {
         "REST-APIs", "BlockChain", "Web3", "Test", "HTML","Microservices",
         // "Nats","S3(MinIo)","KeystoneJs","ExpressJs","RabbitMQ","Actix-Web","Yew","Teloxide","crossterm",
     ],
-    hobbies: &["Bass Guitar",  "Acoustic Guitar", "Loop Making", "Beat Making","Tanbour","Composing"],
+    hobbies: &["Bass Guitar",  "Acoustic Guitar", "Loop Making", "Beat Making","Tanbour","Composing","Sampling","Improvisation"],
     technical_icon: SvgData {
         width: "20",
         height: "20",
@@ -677,8 +677,6 @@ pub const SKILLS_DATA: SkillsData = SkillsData {
         ],
     }
 };
-
-
 
 pub const LANGUAGE_DATA: [Language; 4] = [
     Language {
