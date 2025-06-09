@@ -1013,6 +1013,130 @@
           height: 10px;
         }
       }
+
+      /* Languages Section */
+      /* Languages Section */
+      .lang-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .lang-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+      }
+      .lang-card {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        background: var(--card-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .lang-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+      }
+      .lang-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 140px;
+      }
+      .lang-ring-bg,
+      .lang-ring-progress {
+        transition: var(--transition);
+      }
+      .lang-card:hover .lang-ring-progress {
+        stroke: var(--accent);
+        animation: pulse 1.5s infinite;
+      }
+      .lang-content {
+        text-align: center;
+        z-index: 1;
+      }
+      .lang-icon {
+        margin-bottom: 0.5rem;
+      }
+      .lang-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--accent);
+      }
+      .lang-name {
+        font-size: 0.9rem;
+        color: var(--text-primary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      @keyframes pulse {
+        0% {
+          stroke-opacity: 1;
+        }
+        50% {
+          stroke-opacity: 0.5;
+        }
+        100% {
+          stroke-opacity: 1;
+        }
+      }
+      @media (max-width: 768px) {
+        .lang-grid {
+          gap: 1.5rem;
+        }
+        .lang-card {
+          width: 120px;
+          height: 120px;
+        }
+        .lang-ring {
+          width: 120px;
+          height: 120px;
+        }
+        .lang-ring-bg,
+        .lang-ring-progress {
+          cx: 60;
+          cy: 60;
+          r: 50;
+          stroke-width: 7;
+        }
+        .lang-name {
+          font-size: 0.85rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .lang-card {
+          width: 100px;
+          height: 100px;
+        }
+        .lang-ring {
+          width: 100px;
+          height: 100px;
+        }
+        .lang-ring-bg,
+        .lang-ring-progress {
+          cx: 50;
+          cy: 50;
+          r: 40;
+          stroke-width: 6;
+        }
+        .lang-icon svg {
+          width: 20px;
+          height: 20px;
+        }
+        .lang-name {
+          font-size: 0.8rem;
+        }
+      }
+      /* End of langs */
     </style>
   </head>
   <body>

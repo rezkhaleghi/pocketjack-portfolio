@@ -1,4 +1,4 @@
-use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, MusicData, MusicTrack, Project, ProjectLink, SkillsData, SocialLink, SvgData};
+use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, Language, MusicData, MusicTrack, Project, ProjectLink, SkillsData, SocialLink, SvgData};
 
 pub const HERO_DATA: HeroData = HeroData {
     name: "Reza Khaleghi \"PocketJack\"",
@@ -654,9 +654,9 @@ pub const SKILLS_DATA: SkillsData = SkillsData {
         "Rust", "WASM", "JavaScript", "TypeScript", "Nest.Js", "SpringBoot", "Git", "Docker",
         "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
         "REST-APIs", "BlockChain", "Web3", "Test", "HTML","Microservices",
+        // "Nats","S3(MinIo)","KeystoneJs","ExpressJs","RabbitMQ","Actix-Web","Yew","Teloxide","crossterm",
     ],
     hobbies: &["Bass Guitar",  "Acoustic Guitar", "Loop Making", "Beat Making","Tanbour","Composing"],
-    languages: &["English", "German", "Persian","Kurdish-Hawrami"],
     technical_icon: SvgData {
         width: "20",
         height: "20",
@@ -675,17 +675,66 @@ pub const SKILLS_DATA: SkillsData = SkillsData {
             "M9 18a3 3 0 1 0 0 6 3 3 0 0 0 0-6z",
             "M21 16a3 3 0 1 0 0 6 3 3 0 0 0 0-6z",
         ],
-    },
-    
-    
-    language_icon: SvgData {
-        width: "20",
-        height: "20",
-        view_box: "0 0 24 24",
-        paths: &[
-            "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
-            "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
-            "M2 12h20",
-        ],
-    },
+    }
 };
+
+
+
+pub const LANGUAGE_DATA: [Language; 4] = [
+    Language {
+        name: "English",
+        proficiency: 72.0,
+        icon: SvgData {
+            width: "20",
+            height: "20",
+            view_box: "0 0 24 24",
+            paths: &[
+                "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+                "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+                "M2 12h20",
+            ],
+        },
+    },
+    Language {
+        name: "German",
+        proficiency: 50.0,
+        icon: SvgData {
+            width: "20",
+            height: "20",
+            view_box: "0 0 24 24",
+            paths: &[
+                "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+                "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+                "M2 12h20",
+            ],
+        },
+    },
+    Language {
+        name: "Persian",
+        proficiency: 100.0,
+        icon: SvgData {
+            width: "20",
+            height: "20",
+            view_box: "0 0 24 24",
+            paths: &[
+                "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+                "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+                "M2 12h20",
+            ],
+        },
+    },
+    Language {
+        name: "Kurdish-Hawrami",
+        proficiency: 100.0,
+        icon: SvgData {
+            width: "20",
+            height: "20",
+            view_box: "0 0 24 24",
+            paths: &[
+                "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+                "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+                "M2 12h20",
+            ],
+        },
+    },
+];

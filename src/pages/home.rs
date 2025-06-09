@@ -3,15 +3,7 @@
 use yew::prelude::*;
 use crate::components::{
     // header::Header,
-    hero::Hero,
-    about::About,
-    my_projects::Projects,
-    client_project::ClientProjects,
-    music::Music,
-    experience::Experience, 
-    contact::Contact,
-    footer::Footer,
-    skills::Skills,
+    about::About, client_project::ClientProjects, contact::Contact, experience::Experience, footer::Footer, hero::Hero, lang::Languages, music::Music, my_projects::Projects, skills::Skills
 };
 
 #[function_component(Home)]
@@ -27,6 +19,7 @@ pub fn home() -> Html {
                 <ClientProjects />
                 <Music />
                 <Experience />
+                <Languages />
                 <Contact />
             </main>
             <Footer />
