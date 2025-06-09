@@ -9,7 +9,7 @@ pub fn skills() -> Html {
   let create_skill_card = |skill: &str, category: &str, icon: SvgData| {
       let icon_class = match category {
           "hobby" => "skill-icon-hobby",
-          "language" => "skill-icon-language",
+        //   "language" => "skill-icon-language",
           "technical" => "skill-icon-technical",
           _ => "skill-icon",
       };
@@ -55,21 +55,21 @@ pub fn skills() -> Html {
                       </div>
                   </div>
                   <div class="skills-category">
-                      <h3 class="skills-subtitle">{ "Hobbies" }</h3>
+                      <h3 class="skills-subtitle">{ "Music Skills" }</h3>
                       <div class="skills-grid" aria-label="List of hobbies">
                           { for data.hobbies.iter().map(|&skill| {
-                              create_skill_card(skill, "hobby", data.hobby_icon.clone())
+                              create_skill_card(skill, "hobby", data.music_icon.clone())
                           })}
                       </div>
                   </div>
-                  <div class="skills-category">
-                      <h3 class="skills-subtitle">{ "Languages" }</h3>
-                      <div class="skills-grid" aria-label="List of languages">
-                          { for data.languages.iter().map(|&skill| {
-                              create_skill_card(skill, "language", data.language_icon.clone())
-                          })}
-                      </div>
-                  </div>
+                //   <div class="skills-category">
+                //       <h3 class="skills-subtitle">{ "Languages" }</h3>
+                //       <div class="skills-grid" aria-label="List of languages">
+                //           { for data.languages.iter().map(|&skill| {
+                //               create_skill_card(skill, "language", data.language_icon.clone())
+                //           })}
+                //       </div>
+                //   </div>
               </div>
           </div>
       </section>

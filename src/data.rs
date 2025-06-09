@@ -105,14 +105,15 @@ pub const HERO_DATA: HeroData = HeroData {
             svg: SvgData {
                 width: "24",
                 height: "24",
-                view_box: "0 0 24 24",
+                view_box: "0 0 1043.63 592.71",
                 paths: &[
-                    "M2 3h20v18H2z",
-                    "M6.5 7.5l4.5 4.5-4.5 4.5",
-                    "M13 7.5h4.5",
+                    "M588.67 296.48c0 163.78-131.59 296.23-294.01 296.23S.65 460.26.65 296.48 132.23.25 294.65.25s294.02 132.45 294.02 296.23z",
+                    "M755.05 296.48c0 154.74-68.44 280.18-152.88 280.18S449.3 451.23 449.3 296.48 517.74 16.3 602.18 16.3s152.87 125.44 152.87 280.18z",
+                    "M1043.63 296.48c0 143.29-34.64 259.44-77.37 259.44s-77.36-116.15-77.36-259.44S923.53 37.04 966.26 37.04s77.37 116.15 77.37 259.44z",
                 ],
             },
-        },
+        }
+        
     ],
 };
 
@@ -654,8 +655,8 @@ pub const SKILLS_DATA: SkillsData = SkillsData {
         "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
         "REST-APIs", "BlockChain", "Web3", "Test", "HTML","Microservices",
     ],
-    hobbies: &["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing", "Camping", "Tanbour"],
-    languages: &["English", "German", "Persian"],
+    hobbies: &["Bass Guitar",  "Acoustic Guitar", "Loop Making", "Beat Making","Tanbour","Composing"],
+    languages: &["English", "German", "Persian","Kurdish-Hawrami"],
     technical_icon: SvgData {
         width: "20",
         height: "20",
@@ -665,19 +666,18 @@ pub const SKILLS_DATA: SkillsData = SkillsData {
             "M8 6l-6 6 6 6",
         ],
     },
-    hobby_icon: SvgData {
+    music_icon: SvgData {
         width: "20",
         height: "20",
         view_box: "0 0 24 24",
         paths: &[
-            "M2 22h20",
-            "M6 2v16a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V8",
-            "M20 2v16a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V8",
-            "M10 6h4",
-            "M8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
-            "M16 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
+            "M9 18V5l12-2v13",
+            "M9 18a3 3 0 1 0 0 6 3 3 0 0 0 0-6z",
+            "M21 16a3 3 0 1 0 0 6 3 3 0 0 0 0-6z",
         ],
     },
+    
+    
     language_icon: SvgData {
         width: "20",
         height: "20",

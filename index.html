@@ -666,6 +666,7 @@
       }
 
       /* Skills Section */
+
       .skills-section {
         display: flex;
         flex-direction: column;
@@ -698,17 +699,23 @@
         justify-content: center;
         width: 110px;
         height: 110px;
+        min-width: 110px;
+        max-width: 110px;
+        min-height: 110px;
+        max-height: 110px;
         background: var(--card-bg);
-        border-radius: 10px;
-        padding: 0.5rem;
-        border: 1px solid var(--border);
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         transition: var(--transition);
+        border: 2px solid transparent;
+        padding: 0.4rem;
+        overflow: hidden;
       }
 
       .skill-card:hover {
-        transform: translateY(-5px);
         border-color: var(--accent);
-        box-shadow: 0 5px 15px rgba(0, 112, 243, 0.3);
+        box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+        transform: translateY(-5px);
       }
 
       .skill-icon {
@@ -716,15 +723,16 @@
       }
 
       .skill-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
+        stroke: var(--accent);
       }
 
       .skill-icon-technical svg,
       .skill-icon-hobby svg,
       .skill-icon-language svg {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
       }
 
       .skill-name {
@@ -750,8 +758,8 @@
           padding: 0.4rem;
         }
         .skill-icon svg {
-          width: 18px;
-          height: 18px;
+          width: 20px;
+          height: 20px;
         }
         .skill-name {
           font-size: 0.8rem;
@@ -767,8 +775,8 @@
           height: 90px;
         }
         .skill-icon svg {
-          width: 16px;
-          height: 16px;
+          width: 18px;
+          height: 18px;
         }
         .skill-name {
           font-size: 0.75rem;

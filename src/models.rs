@@ -113,6 +113,6 @@ pub struct SkillsData<'a> {
     pub hobbies: &'a [&'a str],
     pub languages: &'a [&'a str],
     pub technical_icon: SvgData<'a>,
-    pub hobby_icon: SvgData<'a>,
+    pub music_icon: SvgData<'a>,
     pub language_icon: SvgData<'a>,
 }
