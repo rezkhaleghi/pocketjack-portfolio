@@ -121,3 +121,13 @@ pub struct Language {
     pub proficiency: f64,
     pub icon: SvgData<'static>,
 }
+
+
+
+#[derive(Debug, Clone)]
+pub struct Beat {
+    pub title: &'static str,
+    pub key: &'static str,
+    pub bpm: u32,
+    pub audio_path: &'static str,
+}

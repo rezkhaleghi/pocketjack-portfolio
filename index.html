@@ -1015,17 +1015,17 @@
       }
 
       /* Languages Section */
-      /* Languages Section */
       .lang-section {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
       }
       .lang-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 1.5rem;
         justify-content: center;
+        padding: 0 1rem; /* Add padding for mobile edges */
       }
       .lang-card {
         position: relative;
@@ -1039,6 +1039,7 @@
         transition: var(--transition);
         border: 2px solid transparent;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        min-width: 0; /* Prevent overflow on small screens */
       }
       .lang-card:hover {
         transform: translateY(-5px);
@@ -1047,8 +1048,9 @@
       }
       .lang-ring {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 140px;
         height: 140px;
       }
@@ -1063,13 +1065,14 @@
       .lang-content {
         text-align: center;
         z-index: 1;
+        padding: 0.5rem; /* Ensure content isn’t too cramped */
       }
       .lang-icon {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
       }
       .lang-icon svg {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         stroke: var(--accent);
       }
       .lang-name {
@@ -1077,6 +1080,7 @@
         color: var(--text-primary);
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* Scale text for mobile */
       }
       @keyframes pulse {
         0% {
@@ -1091,40 +1095,51 @@
       }
       @media (max-width: 768px) {
         .lang-grid {
-          gap: 1.5rem;
+          gap: 1rem;
+          padding: 0 0.5rem;
         }
         .lang-card {
-          width: 120px;
-          height: 120px;
+          width: 110px;
+          height: 110px;
         }
         .lang-ring {
-          width: 120px;
-          height: 120px;
+          width: 110px;
+          height: 110px;
         }
         .lang-ring-bg,
         .lang-ring-progress {
-          cx: 60;
-          cy: 60;
+          cx: 55;
+          cy: 55;
           r: 50;
           stroke-width: 7;
         }
+        .lang-icon svg {
+          width: 24px;
+          height: 24px;
+        }
         .lang-name {
-          font-size: 0.85rem;
+          font-size: clamp(0.6rem, 2.5vw, 0.85rem);
         }
       }
       @media (max-width: 480px) {
+        .lang-grid {
+          gap: 0.8rem;
+          padding: 0 0.3rem;
+          flex-direction: column; /* Stack cards vertically on very small screens */
+          align-items: center;
+        }
         .lang-card {
-          width: 100px;
-          height: 100px;
+          width: 90px;
+          height: 90px;
         }
         .lang-ring {
-          width: 100px;
-          height: 100px;
+          width: 90px;
+          height: 90px;
         }
         .lang-ring-bg,
         .lang-ring-progress {
-          cx: 50;
-          cy: 50;
+          cx: 45;
+          cy: 45;
           r: 40;
           stroke-width: 6;
         }
@@ -1133,10 +1148,108 @@
           height: 20px;
         }
         .lang-name {
+          font-size: clamp(0.5rem, 2.5vw, 0.8rem);
+        }
+      }
+
+      /* End of langs */
+
+      /* Beats Section */
+      .beats-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .beats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 0 1rem;
+      }
+      .beat-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        transition: var(--transition);
+        padding: 1rem;
+      }
+      .beat-card:hover {
+        box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+        transform: translateY(-5px);
+      }
+      .beat-content {
+        text-align: center;
+      }
+      .beat-title {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        margin: 0 0 0.5rem;
+      }
+      .beat-details {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin: 0 0 1rem;
+      }
+      .beat-play {
+        background: transparent;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+      .beat-play:hover {
+        background: var(--accent);
+        color: var(--text-primary);
+      }
+      .beat-play.playing {
+        background: var(--accent);
+        color: var(--text-primary);
+      }
+      @media (max-width: 768px) {
+        .beats-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1rem;
+          padding: 0 0.5rem;
+        }
+        .beat-card {
+          padding: 0.8rem;
+        }
+        .beat-title {
+          font-size: 1rem;
+        }
+        .beat-details {
+          font-size: 0.8rem;
+        }
+        .beat-play {
+          padding: 0.4rem 0.8rem;
           font-size: 0.8rem;
         }
       }
-      /* End of langs */
+      @media (max-width: 480px) {
+        .beats-grid {
+          grid-template-columns: 1fr; /* Single column on very small screens */
+          gap: 0.8rem;
+          padding: 0 0.3rem;
+        }
+        .beat-card {
+          padding: 0.6rem;
+        }
+        .beat-title {
+          font-size: 0.9rem;
+        }
+        .beat-details {
+          font-size: 0.7rem;
+        }
+        .beat-play {
+          padding: 0.3rem 0.6rem;
+          font-size: 0.7rem;
+        }
+      }
+      /* End Beats Section */
     </style>
   </head>
   <body>

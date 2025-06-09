@@ -1,4 +1,4 @@
-use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, Language, MusicData, MusicTrack, Project, ProjectLink, SkillsData, SocialLink, SvgData};
+use crate::models::{AboutData, AboutSection, Beat, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, Language, MusicData, MusicTrack, Project, ProjectLink, SkillsData, SocialLink, SvgData};
 
 pub const HERO_DATA: HeroData = HeroData {
     name: "Reza Khaleghi \"PocketJack\"",
@@ -734,5 +734,27 @@ pub const LANGUAGE_DATA: [Language; 4] = [
                 "M2 12h20",
             ],
         },
+    },
+];
+
+
+pub const BEATS_DATA: [Beat; 3] = [
+    Beat {
+        title: "13 cocain x 808Cash",
+        key: "F#m Minor",
+        bpm: 129,
+        audio_path: "https://whyp.it/tracks/286832/13-cocain-129bpm-fm-at-8o8cash-at-pocketjack?token=YGa8N",
+    },
+    Beat {
+        title: "Hip Hop Groove",
+        key: "G Major",
+        bpm: 85,
+        audio_path: "beats/hip-hop.mp3",
+    },
+    Beat {
+        title: "Ambient Pulse",
+        key: "A Minor",
+        bpm: 70,
+        audio_path: "beats/ambient.mp3",
     },
 ];

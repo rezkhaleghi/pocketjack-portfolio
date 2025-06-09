@@ -9,3 +9,4 @@ pub mod music;
 pub mod my_projects;
 pub mod skills;
 pub mod lang;
+pub mod beats;
