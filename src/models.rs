@@ -107,12 +107,12 @@ pub struct SvgData<'a> {
     pub paths: &'a [&'a str],
 }
 
-// #[derive(Debug, Clone)]
-// pub struct SkillsData<'a> {
-//     pub technical_skills: &'a [&'a str],
-//     pub hobbies: &'a [&'a str],
-//     pub languages: &'a [&'a str],
-//     pub technical_icon: SvgData<'a>,
-//     pub hobby_icon: SvgData<'a>,
-//     pub language_icon: SvgData<'a>,
-// }
+#[derive(Debug, Clone)]
+pub struct SkillsData<'a> {
+    pub technical_skills: &'a [&'a str],
+    pub hobbies: &'a [&'a str],
+    pub languages: &'a [&'a str],
+    pub technical_icon: SvgData<'a>,
+    pub hobby_icon: SvgData<'a>,
+    pub language_icon: SvgData<'a>,
+}

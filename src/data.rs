@@ -1,4 +1,4 @@
-use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, MusicData, MusicTrack, Project, ProjectLink, SocialLink, SvgData};
+use crate::models::{AboutData, AboutSection, ContactData, ContactLink, Experience, ExperienceData, ExperienceLink, HeroData, MusicData, MusicTrack, Project, ProjectLink, SkillsData, SocialLink, SvgData};
 
 pub const HERO_DATA: HeroData = HeroData {
     name: "Reza Khaleghi \"PocketJack\"",
@@ -648,44 +648,44 @@ pub const MUSIC_DATA: MusicData = MusicData {
     ],
 };
 
-// pub const SKILLS_DATA: SkillsData = SkillsData {
-//     technical_skills: &[
-//         "Rust", "WASM", "JavaScript", "TypeScript", "Nest.Js", "SpringBoot", "Git", "Docker",
-//         "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
-//         "REST-APIs", "BlockChain", "Web3", "Test", "HTML",
-//     ],
-//     hobbies: &["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing", "Camping", "Tanbour"],
-//     languages: &["English", "German", "Persian"],
-//     technical_icon: SvgData {
-//         width: "20",
-//         height: "20",
-//         view_box: "0 0 24 24",
-//         paths: &[
-//             "M16 18l6-6-6-6",
-//             "M8 6l-6 6 6 6",
-//         ],
-//     },
-//     hobby_icon: SvgData {
-//         width: "20",
-//         height: "20",
-//         view_box: "0 0 24 24",
-//         paths: &[
-//             "M2 22h20",
-//             "M6 2v16a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V8",
-//             "M20 2v16a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V8",
-//             "M10 6h4",
-//             "M8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
-//             "M16 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
-//         ],
-//     },
-//     language_icon: SvgData {
-//         width: "20",
-//         height: "20",
-//         view_box: "0 0 24 24",
-//         paths: &[
-//             "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
-//             "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
-//             "M2 12h20",
-//         ],
-//     },
-// };
+pub const SKILLS_DATA: SkillsData = SkillsData {
+    technical_skills: &[
+        "Rust", "WASM", "JavaScript", "TypeScript", "Nest.Js", "SpringBoot", "Git", "Docker",
+        "Redis", "ZeroMQ", "Socketio", "Mongo DB", "Postgres", "TypeORM", "Linux", "GraphQL",
+        "REST-APIs", "BlockChain", "Web3", "Test", "HTML","Microservices",
+    ],
+    hobbies: &["Bass Guitar", "Acoustic Guitar", "LoopMaking", "Composing", "Camping", "Tanbour"],
+    languages: &["English", "German", "Persian"],
+    technical_icon: SvgData {
+        width: "20",
+        height: "20",
+        view_box: "0 0 24 24",
+        paths: &[
+            "M16 18l6-6-6-6",
+            "M8 6l-6 6 6 6",
+        ],
+    },
+    hobby_icon: SvgData {
+        width: "20",
+        height: "20",
+        view_box: "0 0 24 24",
+        paths: &[
+            "M2 22h20",
+            "M6 2v16a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V8",
+            "M20 2v16a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V8",
+            "M10 6h4",
+            "M8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
+            "M16 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2",
+        ],
+    },
+    language_icon: SvgData {
+        width: "20",
+        height: "20",
+        view_box: "0 0 24 24",
+        paths: &[
+            "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z",
+            "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+            "M2 12h20",
+        ],
+    },
+};
