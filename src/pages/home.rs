@@ -3,7 +3,7 @@
 use yew::prelude::*;
 use crate::components::{
     // header::Header,
-    about::About, beats::Beats, client_project::ClientProjects, contact::Contact, experience::Experience, footer::Footer, hero::Hero, lang::Languages, music::Music, my_projects::Projects, skills::Skills
+    about::About, client_project::ClientProjects, contact::Contact, experience::Experience, footer::Footer, hero::Hero, lang::Languages, music::Music, my_projects::Projects, skills::Skills
 };
 
 #[function_component(Home)]
