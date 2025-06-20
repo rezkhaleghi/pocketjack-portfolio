@@ -358,7 +358,7 @@ pub const EXPERIENCE_DATA: ExperienceData = ExperienceData {
             company: "Freelance",
             date: "2016 - Present",
             description: "As a freelance developer, I’ve delivered a wide range of projects—from simple e-commerce websites to fully customized business solutions. My work spans web applications, Telegram bots, API integrations, and custom backend systems, tailored to meet unique client needs.",
-            image: "/static/we0.jpg",
+            image: "/static/we-freelance.jpg",
             technologies: "Rust, TypeScript, Node.js, MongoDB",
             links: &[ExperienceLink {
                 text: "View Portfolio →",
